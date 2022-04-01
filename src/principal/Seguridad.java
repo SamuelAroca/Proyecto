@@ -1,0 +1,32 @@
+package principal;
+
+
+import javax.swing.JOptionPane;
+
+public class Seguridad {
+    Login login = new Login();
+    String res;
+   
+    public void validarUsuario(String usuarios[],String userId,String nombre,String pwd,int intentos) {
+        boolean encontrado = false;
+        
+        for(int i = 0; i < usuarios.length -1; i++) {
+            if ((usuarios[i].equals(nombre) && usuarios[i+1].equals(pwd))) {
+                res = "Bienvenido " + nombre;
+                encontrado = true;
+                JOptionPane.showMessageDialog(null, res,"Inicio de seccion",JOptionPane.INFORMATION_MESSAGE);
+                intentos = 0;
+                Login.setIntentos(intentos);
+                break;
+            }
+        }
+        if(encontrado == false) {
+            res = "Clave y/o ID erroneos. Van " + intentos + " intentos fallidos";
+            JOptionPane.showMessageDialog(null, res,"Inicio de seccion",JOptionPane.ERROR_MESSAGE);
+        }
+        if(intentos > 2) {
+            JOptionPane.showMessageDialog(null, "3 Intentos fallidos, se cerrara el programa"," Inicio de seccion",JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
+    }
+}
