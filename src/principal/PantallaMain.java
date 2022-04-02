@@ -12,7 +12,7 @@ public class PantallaMain extends javax.swing.JFrame {
 
     public PantallaMain() {
         initComponents();
-    }
+    }//hola
     
     public void enlace(String enlaceAAceder) throws IOException {
         Desktop enlace = Desktop.getDesktop();
