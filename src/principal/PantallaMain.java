@@ -38,21 +38,21 @@ public class PantallaMain extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        labelTitulo = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
         labelVideo = new javax.swing.JLabel();
         botonLogin = new javax.swing.JButton();
         botonRegistro = new javax.swing.JButton();
         botonContactos = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        labelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Titulo Main.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
+        labelTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Titulo Main.png"))); // NOI18N
+        jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
         labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoV.png"))); // NOI18N
         labelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,8 +101,8 @@ public class PantallaMain extends javax.swing.JFrame {
         });
         jPanel1.add(botonContactos, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 650, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 2.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 2.png"))); // NOI18N
+        jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -158,10 +158,10 @@ public class PantallaMain extends javax.swing.JFrame {
     private javax.swing.JLabel botonContactos;
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonRegistro;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelFondo;
     private javax.swing.JLabel labelLogo;
+    private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelVideo;
     // End of variables declaration//GEN-END:variables
 }
