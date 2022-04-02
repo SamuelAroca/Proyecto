@@ -133,11 +133,6 @@ public class Login extends javax.swing.JFrame {
 
         txtIDLog1.setBackground(new java.awt.Color(229, 229, 229));
         txtIDLog1.setToolTipText("ID Registrado");
-        txtIDLog1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDLog1ActionPerformed(evt);
-            }
-        });
         jPanel2.add(txtIDLog1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 470, 50));
 
         labelNombre.setText("Nombre");
@@ -203,10 +198,6 @@ public class Login extends javax.swing.JFrame {
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameContacto.setVisible(true);
     }//GEN-LAST:event_btnContacActionPerformed
-
-    private void txtIDLog1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDLog1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDLog1ActionPerformed
 
     private void lblLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoMouseClicked
         try {
