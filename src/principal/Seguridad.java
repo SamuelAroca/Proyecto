@@ -11,7 +11,7 @@ public class Seguridad {
         boolean encontrado = false;
         
         for(int i = 0; i < usuarios.length -1; i++) {
-            if ((usuarios[i].equals(nombre) && usuarios[i+1].equals(pwd))) {
+            if ((usuarios[i].equals(userId) && usuarios[i+1].equals(nombre) && usuarios[i+2].equals(pwd))) {
                 res = "Bienvenido " + nombre;
                 encontrado = true;
                 JOptionPane.showMessageDialog(null, res,"Inicio de seccion",JOptionPane.INFORMATION_MESSAGE);

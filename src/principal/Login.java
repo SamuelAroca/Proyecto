@@ -98,11 +98,6 @@ public class Login extends javax.swing.JFrame {
 
         txtNombreLog.setBackground(new java.awt.Color(229, 229, 229));
         txtNombreLog.setToolTipText("Nombre registrado");
-        txtNombreLog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreLogActionPerformed(evt);
-            }
-        });
         jPanel2.add(txtNombreLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 470, 50));
 
         btnLogin.setBackground(new java.awt.Color(160, 200, 78));
@@ -143,10 +138,6 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreLogActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreLogActionPerformed
-
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         FileReader fr = null;
         try {
@@ -173,7 +164,7 @@ public class Login extends javax.swing.JFrame {
             }
             intentos++;
             
-            userId = txtNombreLog.getText();
+            userId = txtIDLog1.getText();
             user = txtNombreLog.getText();
             pwd = txtPwdLog.getText();
             
