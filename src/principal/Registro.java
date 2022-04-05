@@ -1,10 +1,14 @@
 package principal;
 
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Registro extends javax.swing.JFrame {
 
@@ -88,30 +92,15 @@ public class Registro extends javax.swing.JFrame {
         jPanel2.add(lblLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
 
         txtID.setBackground(new java.awt.Color(229, 229, 229));
-        txtID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIDActionPerformed(evt);
-            }
-        });
         jPanel2.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 470, 50));
 
         txtName.setBackground(new java.awt.Color(229, 229, 229));
-        txtName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNameActionPerformed(evt);
-            }
-        });
         jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 470, 50));
 
         labelNombre.setText("Nombre");
         jPanel2.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(229, 229, 229));
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 470, 50));
 
         jLabel6.setText("Contraseña");
@@ -148,16 +137,41 @@ public class Registro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIDActionPerformed
-
-    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNameActionPerformed
-
     private void btnRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisActionPerformed
-        // TODO add your handling code here:
+        File archivo;
+        FileWriter escribir;
+        FileWriter registrar;
+        PrintWriter linea;
+        archivo = new File("usuarios.txt");
+        if(!archivo.exists()){
+            try
+            {
+                archivo.createNewFile();
+                escribir = new FileWriter(archivo,true);
+                linea = new PrintWriter(escribir);
+                linea.close();
+                escribir.close();
+            }catch(IOException e){
+                
+            }
+            
+        }else{
+            try{
+                escribir = new FileWriter(archivo,true);
+                linea = new PrintWriter(escribir);
+                linea.println(txtID.getText());
+                linea.println(txtName.getText());
+                linea.println(txtPassword.getText());
+                linea.close();
+                escribir.close();
+                
+                JOptionPane.showMessageDialog(new JFrame(), "Bienvenido" + "\nRegistrado correctamente como: " + txtName.getText());
+                
+                }catch(IOException e){
+                    
+                }
+            
+        }
     }//GEN-LAST:event_btnRegisActionPerformed
 
     private void btnContacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContacActionPerformed
@@ -187,10 +201,6 @@ public class Registro extends javax.swing.JFrame {
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setVisible(true);
     }//GEN-LAST:event_butonRegresarActionPerformed
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
         dispose();
