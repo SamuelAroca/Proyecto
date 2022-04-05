@@ -13,7 +13,7 @@ public class ProVitarrico {
                 frameMain.setSize(1073,767);
                 frameMain.setLocationRelativeTo(null);
                 frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frameMain.setVisible(true);
+                frameMain.setVisible(true); //Hola
             }
         });
     }  
