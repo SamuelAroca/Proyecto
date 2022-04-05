@@ -143,16 +143,16 @@ public class Registro extends javax.swing.JFrame {
         FileWriter registrar;
         PrintWriter linea;
         archivo = new File("usuarios.txt");
+        
         if(!archivo.exists()){
-            try
-            {
+            try{
                 archivo.createNewFile();
                 escribir = new FileWriter(archivo,true);
                 linea = new PrintWriter(escribir);
                 linea.close();
                 escribir.close();
             }catch(IOException e){
-                
+                JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
             }
             
         }else{
@@ -166,11 +166,17 @@ public class Registro extends javax.swing.JFrame {
                 escribir.close();
                 
                 JOptionPane.showMessageDialog(new JFrame(), "Bienvenido" + "\nRegistrado correctamente como: " + txtName.getText());
+                dispose();
+                JFrame frameLog = new Login();
+                frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frameLog.setSize(1073,767);
+                frameLog.setLocationRelativeTo(null);
+                frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frameLog.setVisible(true);
                 
                 }catch(IOException e){
-                    
-                }
-            
+                    JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
+                }           
         }
     }//GEN-LAST:event_btnRegisActionPerformed
 
