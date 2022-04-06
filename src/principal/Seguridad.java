@@ -29,4 +29,15 @@ public class Seguridad {
             System.exit(0);
         }
     }
+    
+    public boolean validarSiExiste(String ids[],String userId) {
+        
+        for (String validar : ids) {
+            if (validar.equals(userId)) {
+                JOptionPane.showMessageDialog(null, "Ese ID ya se encuentra registrado");
+                return true;      
+            }           
+        }
+        return false;
+    }
 }

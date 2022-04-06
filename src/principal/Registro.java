@@ -1,10 +1,12 @@
 package principal;
 
-
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -15,6 +17,7 @@ public class Registro extends javax.swing.JFrame {
     
     public Registro() {
         initComponents();
+        rootPane.setDefaultButton(btnRegis);
     }
     
     @SuppressWarnings("unchecked")
@@ -139,10 +142,13 @@ public class Registro extends javax.swing.JFrame {
 
     private void btnRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisActionPerformed
         File archivo;
+        File archivo2;
         FileWriter escribir;
-        FileWriter registrar;
+        FileWriter escribir2;
         PrintWriter linea;
+        PrintWriter linea2;
         archivo = new File("usuarios.txt");
+        archivo2 = new File("ids.txt");
         
         if(!archivo.exists()){
             try{
@@ -151,32 +157,74 @@ public class Registro extends javax.swing.JFrame {
                 linea = new PrintWriter(escribir);
                 linea.close();
                 escribir.close();
+                
+                archivo2.createNewFile();
+                escribir2 = new FileWriter(archivo2,true);
+                linea2 = new PrintWriter(escribir2);
+                linea2.close();
+                escribir2.close();
+                               
             }catch(IOException e){
                 JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
             }
             
         }else{
-            try{
+            FileReader fr = null;
+            Scanner sc;
+            try{                              
+
+                int nLineas = 0;
+                int i = 0;
+                String[] ides = null;
+                String lineaLeer;
+                String fichero = "ids.txt";
+                sc = new Scanner(new File(fichero));
+                File f = new File(fichero);
+                fr = new FileReader(f);
+                BufferedReader br = new BufferedReader(fr);
+
+                while((lineaLeer = br.readLine()) != null) {
+                        nLineas++;      
+                }
+
+                ides = new String[nLineas];//Tamaño del arreglo
+
+                while(sc.hasNextLine()) {
+                    ides[i++] = sc.nextLine();//Almacenado cada linea en una posicion
+                }
+                fr.close();
+                
+                Seguridad s = new Seguridad();
+                
                 escribir = new FileWriter(archivo,true);
                 linea = new PrintWriter(escribir);
-                linea.println(txtID.getText());
-                linea.println(txtName.getText());
-                linea.println(txtPassword.getText());
-                linea.close();
-                escribir.close();
+                escribir2 = new FileWriter(archivo2,true);
+                linea2 = new PrintWriter(escribir2);
                 
-                JOptionPane.showMessageDialog(new JFrame(), "Bienvenido" + "\nRegistrado correctamente como: " + txtName.getText());
-                dispose();
-                JFrame frameLog = new Login();
-                frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frameLog.setSize(1073,767);
-                frameLog.setLocationRelativeTo(null);
-                frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frameLog.setVisible(true);
-                
-                }catch(IOException e){
-                    JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
-                }           
+                String id = txtID.getText();                                
+
+                if (!s.validarSiExiste(ides, id)) {
+                    linea.println(txtID.getText());
+                    linea2.println(txtID.getText());
+                    
+                    linea.println(txtName.getText());
+                    linea.println(txtPassword.getText());
+                    linea.close();
+                    escribir.close();
+                    linea2.close();
+                    escribir2.close();
+
+                    JOptionPane.showMessageDialog(new JFrame(), "Bienvenido" + "\nRegistrado correctamente como: " + txtName.getText());
+                    dispose();
+                    JFrame frameLog = new Login();
+                    frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frameLog.setSize(1073,767);
+                    frameLog.setLocationRelativeTo(null);
+                    frameLog.setVisible(true);
+                }                                        
+            }catch(IOException e){
+                JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
+            }           
         }
     }//GEN-LAST:event_btnRegisActionPerformed
 
