@@ -36,11 +36,11 @@ public class Registro extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         labelNombre = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         btnRegis = new javax.swing.JButton();
         lblTitle1 = new javax.swing.JLabel();
         labelRegresar4 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,9 +103,6 @@ public class Registro extends javax.swing.JFrame {
         labelNombre.setText("Nombre");
         jPanel2.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, -1, -1));
 
-        txtPassword.setBackground(new java.awt.Color(229, 229, 229));
-        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 470, 50));
-
         jLabel6.setText("Contraseña");
         jLabel6.setToolTipText("");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
@@ -132,6 +129,14 @@ public class Registro extends javax.swing.JFrame {
             }
         });
         jPanel2.add(labelRegresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 640, -1, -1));
+
+        txtPassword.setBackground(new java.awt.Color(229, 229, 229));
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 470, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 580, 770));
 
@@ -221,7 +226,10 @@ public class Registro extends javax.swing.JFrame {
                     frameLog.setSize(1073,767);
                     frameLog.setLocationRelativeTo(null);
                     frameLog.setVisible(true);
-                }                                        
+                } else {
+                    txtID.setText(null);
+                }
+                
             }catch(IOException e){
                 JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
             }           
@@ -231,7 +239,6 @@ public class Registro extends javax.swing.JFrame {
     private void btnContacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContacActionPerformed
         dispose();
         JFrame frameContacto = new Contactos();
-        frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameContacto.setSize(1073,767);
         frameContacto.setLocationRelativeTo(null);
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -268,12 +275,15 @@ public class Registro extends javax.swing.JFrame {
     private void labelRegresar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegresar4MouseClicked
         dispose();
         JFrame frameLog = new Login();
-        frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLog.setSize(1073,767);
         frameLog.setLocationRelativeTo(null);
         frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLog.setVisible(true);
     }//GEN-LAST:event_labelRegresar4MouseClicked
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;
@@ -292,7 +302,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitle1;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 
 }

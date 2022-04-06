@@ -112,7 +112,6 @@ public class PantallaMain extends javax.swing.JFrame {
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         dispose();
         JFrame frameLog = new Login();
-        frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLog.setSize(1073,767);
         frameLog.setLocationRelativeTo(null);
         frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -123,7 +122,6 @@ public class PantallaMain extends javax.swing.JFrame {
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
         dispose();
         JFrame frameRegistro = new Registro();
-        frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameRegistro.setSize(1073,767);
         frameRegistro.setLocationRelativeTo(null);
         frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -146,7 +144,6 @@ public class PantallaMain extends javax.swing.JFrame {
     private void botonContactosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContactosMouseClicked
         dispose();
         JFrame frameContacto = new Contactos();
-        frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameContacto.setSize(1073,767);
         frameContacto.setLocationRelativeTo(null);
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

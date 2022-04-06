@@ -183,7 +183,6 @@ public class Login extends javax.swing.JFrame {
     private void btnContacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContacActionPerformed
         dispose();
         JFrame frameContacto = new Contactos();
-        frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameContacto.setSize(1073,767);
         frameContacto.setLocationRelativeTo(null);
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
