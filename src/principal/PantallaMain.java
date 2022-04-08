@@ -47,6 +47,7 @@ public class PantallaMain extends javax.swing.JFrame {
         labelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,7 +80,7 @@ public class PantallaMain extends javax.swing.JFrame {
                 botonLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(botonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, -1, -1));
+        jPanel1.add(botonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, -1, -1));
         botonLogin.getAccessibleContext().setAccessibleName("botonLogin");
 
         botonRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/boton registro.png"))); // NOI18N
@@ -112,6 +113,7 @@ public class PantallaMain extends javax.swing.JFrame {
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         dispose();
         JFrame frameLog = new Login();
+        frameLog.setResizable(false);
         frameLog.setSize(1073,767);
         frameLog.setLocationRelativeTo(null);
         frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -122,6 +124,7 @@ public class PantallaMain extends javax.swing.JFrame {
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
         dispose();
         JFrame frameRegistro = new Registro();
+        frameRegistro.setResizable(false);
         frameRegistro.setSize(1073,767);
         frameRegistro.setLocationRelativeTo(null);
         frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -144,6 +147,7 @@ public class PantallaMain extends javax.swing.JFrame {
     private void botonContactosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContactosMouseClicked
         dispose();
         JFrame frameContacto = new Contactos();
+        frameContacto.setResizable(false);
         frameContacto.setSize(1073,767);
         frameContacto.setLocationRelativeTo(null);
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

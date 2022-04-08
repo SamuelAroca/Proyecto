@@ -239,6 +239,7 @@ public class Registro extends javax.swing.JFrame {
     private void btnContacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContacActionPerformed
         dispose();
         JFrame frameContacto = new Contactos();
+        frameContacto.setResizable(false);
         frameContacto.setSize(1073,767);
         frameContacto.setLocationRelativeTo(null);
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -257,6 +258,7 @@ public class Registro extends javax.swing.JFrame {
     private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
         dispose();
         JFrame frameMain = new PantallaMain();
+        frameMain.setResizable(false);
         frameMain.setSize(1073,767);
         frameMain.setLocationRelativeTo(null);
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -265,7 +267,8 @@ public class Registro extends javax.swing.JFrame {
 
     private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
         dispose();
-        JFrame frameMain = new PantallaMain();            
+        JFrame frameMain = new PantallaMain();  
+        frameMain.setResizable(false);
         frameMain.setSize(1073,767);
         frameMain.setLocationRelativeTo(null);
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -275,6 +278,7 @@ public class Registro extends javax.swing.JFrame {
     private void labelRegresar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegresar4MouseClicked
         dispose();
         JFrame frameLog = new Login();
+        frameLog.setResizable(false);
         frameLog.setSize(1073,767);
         frameLog.setLocationRelativeTo(null);
         frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

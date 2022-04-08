@@ -183,6 +183,7 @@ public class Login extends javax.swing.JFrame {
     private void btnContacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContacActionPerformed
         dispose();
         JFrame frameContacto = new Contactos();
+        frameContacto.setResizable(false);
         frameContacto.setSize(1073,767);
         frameContacto.setLocationRelativeTo(null);
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -201,6 +202,7 @@ public class Login extends javax.swing.JFrame {
     private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
         dispose();
         JFrame frameMain = new PantallaMain();
+        frameMain.setResizable(false);
         frameMain.setSize(1073,767);
         frameMain.setLocationRelativeTo(null);
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

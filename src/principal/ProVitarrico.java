@@ -9,7 +9,8 @@ public class ProVitarrico {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                JFrame frameMain = new PantallaMain();            
+                JFrame frameMain = new PantallaMain();   
+                frameMain.setResizable(false);
                 frameMain.setSize(1073,767);
                 frameMain.setLocationRelativeTo(null);
                 frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

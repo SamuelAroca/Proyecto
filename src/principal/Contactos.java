@@ -76,6 +76,7 @@ public class Contactos extends javax.swing.JFrame {
     private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
         dispose();
         JFrame frameMain = new PantallaMain();
+        frameMain.setResizable(false);
         frameMain.setSize(1073,767);
         frameMain.setLocationRelativeTo(null);
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
