@@ -7,17 +7,18 @@ public class Seguridad {
     Login login = new Login();
     String res;
    
-    public void validarUsuario(String usuarios[],String userId,String nombre,String pwd,int intentos) {
+    public boolean validarUsuario(String usuarios[],String userId,String nombre,String pwd,int intentos) {
         boolean encontrado = false;
         
         for(int i = 0; i < usuarios.length -1; i++) {
             if ((usuarios[i].equals(userId) && usuarios[i+1].equals(nombre) && usuarios[i+2].equals(pwd))) {
-                res = "Bienvenido " + nombre;
+                
                 encontrado = true;
-                JOptionPane.showMessageDialog(null, res,"Inicio de seccion",JOptionPane.INFORMATION_MESSAGE);
+                
                 intentos = 0;
                 Login.setIntentos(intentos);
-                break;
+                
+                return true;                                          
             }
         }
         if(encontrado == false) {
@@ -28,6 +29,8 @@ public class Seguridad {
             JOptionPane.showMessageDialog(null, "3 Intentos fallidos, se cerrara el programa"," Inicio de seccion",JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
+        
+        return false;
     }
     
     public boolean validarSiExiste(String ids[],String userId) {

@@ -169,7 +169,17 @@ public class Login extends javax.swing.JFrame {
             pwd = txtPwdLog.getText();
             
             Seguridad s = new Seguridad();
-            s.validarUsuario(usuarios, userId, user, pwd, intentos);
+            
+            if (s.validarUsuario(usuarios, userId, user, pwd, intentos)) {
+                dispose();
+                JFrame frameMenu = new Menu();
+                frameMenu.setResizable(false);
+                frameMenu.setSize(1090,785);
+                frameMenu.setLocationRelativeTo(null);
+                frameMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frameMenu.setVisible(true);
+            }
+            
             fr.close();
             
                                 
