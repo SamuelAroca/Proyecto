@@ -174,7 +174,7 @@ public class Login extends javax.swing.JFrame {
                 dispose();
                 JFrame frameMenu = new Menu();
                 frameMenu.setResizable(false);
-                frameMenu.setSize(1090,785);
+                frameMenu.setSize(1095,785);
                 frameMenu.setLocationRelativeTo(null);
                 frameMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frameMenu.setVisible(true);

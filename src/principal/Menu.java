@@ -63,6 +63,11 @@ public class Menu extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ver Mas....png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ver Mas....png"))); // NOI18N
@@ -206,6 +211,16 @@ public class Menu extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_labelLogoMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+        JFrame frameGranolas = new Granolas();
+        frameGranolas.setResizable(false);
+        frameGranolas.setSize(1112,767);
+        frameGranolas.setLocationRelativeTo(null);
+        frameGranolas.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameGranolas.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonClose;
