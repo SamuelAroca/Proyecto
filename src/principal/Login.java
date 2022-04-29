@@ -1,21 +1,18 @@
 package principal;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.*;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 import javax.swing.JFrame;
 
 public class Login extends javax.swing.JFrame {
     
-    private static Scanner sc;
+    private static Scanner sc, sc2;
+    
     private static int intentos;
     private static String userId,user,pwd;
-
+    private static String adminId,userAdmin,pwdAdmin;
    
     public Login() {
         initComponents();
@@ -46,6 +43,7 @@ public class Login extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtIDLog1 = new javax.swing.JTextField();
         labelNombre = new javax.swing.JLabel();
+        comboTipoUser = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -133,24 +131,38 @@ public class Login extends javax.swing.JFrame {
         labelNombre.setText("Nombre");
         jPanel2.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, -1, -1));
 
+        comboTipoUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
+        jPanel2.add(comboTipoUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 670, 150, 30));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 580, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        FileReader fr = null;
+        FileReader fr;
+        FileReader fr2;
         try {
             //Login
             int nLineas = 0;
+            int nLineas2 = 0;
             int i = 0;
-            String[] usuarios = null;
+            int j = 0;
+            String[] usuarios;
+            String[] admins;
             String linea;
+            String linea2;
             String fichero = "usuarios.txt";
+            String fichero2 = "admins.txt";
             sc = new Scanner(new File(fichero));
+            sc2 = new Scanner(new File(fichero2));
             File f = new File(fichero);
+            File f2 = new File(fichero2);
             fr = new FileReader(f);
+            fr2 = new FileReader(f2);
+            
             BufferedReader br = new BufferedReader(fr);
+            BufferedReader br2 = new BufferedReader(fr2);
             
             
             while((linea = br.readLine()) != null) {
@@ -162,23 +174,50 @@ public class Login extends javax.swing.JFrame {
             while(sc.hasNextLine()) {
                 usuarios[i++] = sc.nextLine();//Almacenado cada linea en una posicion
             }
+            //Login Admins
+            while((linea2 = br2.readLine()) != null) {
+                nLineas2++;
+            }
+            
+            admins = new String[nLineas2];
+            
+            while(sc2.hasNextLine()) {
+                admins[j++] = sc2.nextLine();
+            }
+            
             intentos++;
             
             userId = txtIDLog1.getText();
             user = txtNombreLog.getText();
             pwd = txtPwdLog.getText();
             
+            adminId = txtIDLog1.getText();
+            userAdmin = txtNombreLog.getText();
+            pwdAdmin = txtPwdLog.getText();
+            
             Seguridad s = new Seguridad();
             
-            if (s.validarUsuario(usuarios, userId, user, pwd, intentos)) {
-                dispose();
-                JFrame frameMenu = new Menu();
-                frameMenu.setResizable(false);
-                frameMenu.setSize(1095,785);
-                frameMenu.setLocationRelativeTo(null);
-                frameMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frameMenu.setVisible(true);
-            }
+            if(Objects.equals(comboTipoUser.getSelectedItem(), "Usuario"))
+                if (s.validarUsuario(usuarios, userId, user, pwd, intentos)) {
+                    dispose();
+                    JFrame frameMenu = new Menu();
+                    frameMenu.setResizable(false);
+                    frameMenu.setSize(1095,785);
+                    frameMenu.setLocationRelativeTo(null);
+                    frameMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frameMenu.setVisible(true);
+                }
+            
+            if(Objects.equals(comboTipoUser.getSelectedItem(), "Administrador"))
+                if(s.validarUsuario(admins, adminId, userAdmin, pwdAdmin, intentos)) {
+                    dispose();
+                    JFrame frameAdmin = new Admins();
+                    frameAdmin.setResizable(false);
+                    frameAdmin.setSize(1095,785);
+                    frameAdmin.setLocationRelativeTo(null);
+                    frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frameAdmin.setVisible(true);
+                }
             
             fr.close();
             
@@ -224,6 +263,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnContac;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton butonRegresar;
+    private javax.swing.JComboBox<String> comboTipoUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

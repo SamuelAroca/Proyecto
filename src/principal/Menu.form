@@ -113,7 +113,7 @@
     <Component class="javax.swing.JButton" name="botonClose">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/Frame 6.png"/>
+          <Image iconType="3" name="/Images/BtnCerrarSesi&#xf3;n.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>

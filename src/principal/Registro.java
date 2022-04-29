@@ -131,11 +131,6 @@ public class Registro extends javax.swing.JFrame {
         jPanel2.add(labelRegresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 640, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(229, 229, 229));
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
-            }
-        });
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 470, 50));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 580, 770));
@@ -284,10 +279,6 @@ public class Registro extends javax.swing.JFrame {
         frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLog.setVisible(true);
     }//GEN-LAST:event_labelRegresar4MouseClicked
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;

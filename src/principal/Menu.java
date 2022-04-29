@@ -87,7 +87,7 @@ public class Menu extends javax.swing.JFrame {
         jButton3.setContentAreaFilled(false);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, -1, -1));
 
-        botonClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 6.png"))); // NOI18N
+        botonClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCerrarSesión.png"))); // NOI18N
         botonClose.setBorder(null);
         botonClose.setBorderPainted(false);
         botonClose.setContentAreaFilled(false);
