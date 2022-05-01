@@ -1,6 +1,6 @@
 package principal;
 
-//try try
+//yo
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
