@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,6 +42,7 @@ public class Registro extends javax.swing.JFrame {
         lblTitle1 = new javax.swing.JLabel();
         labelRegresar4 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
+        comboAdmin = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -128,10 +130,13 @@ public class Registro extends javax.swing.JFrame {
                 labelRegresar4MouseClicked(evt);
             }
         });
-        jPanel2.add(labelRegresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 640, -1, -1));
+        jPanel2.add(labelRegresar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(229, 229, 229));
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 470, 50));
+
+        comboAdmin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
+        jPanel2.add(comboAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, 150, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 580, 770));
 
@@ -169,13 +174,13 @@ public class Registro extends javax.swing.JFrame {
             }
             
         }else{
-            FileReader fr = null;
+            FileReader fr;
             Scanner sc;
             try{                              
 
                 int nLineas = 0;
                 int i = 0;
-                String[] ides = null;
+                String[] ides;
                 String lineaLeer;
                 String fichero = "ids.txt";
                 sc = new Scanner(new File(fichero));
@@ -204,23 +209,44 @@ public class Registro extends javax.swing.JFrame {
                 String id = txtID.getText();                                
 
                 if (!s.validarSiExiste(ides, id)) {
-                    linea.println(txtID.getText());
-                    linea2.println(txtID.getText());
                     
-                    linea.println(txtName.getText());
-                    linea.println(txtPassword.getText());
-                    linea.close();
-                    escribir.close();
-                    linea2.close();
-                    escribir2.close();
+                    if (Objects.equals(comboAdmin.getSelectedItem(), "Usuario")) {
+                        linea.println(txtID.getText());
+                        linea2.println(txtID.getText());
 
-                    JOptionPane.showMessageDialog(new JFrame(), "Bienvenido" + "\nRegistrado correctamente como: " + txtName.getText());
-                    dispose();
-                    JFrame frameLog = new Login();
-                    frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frameLog.setSize(1073,767);
-                    frameLog.setLocationRelativeTo(null);
-                    frameLog.setVisible(true);
+                        linea.println(txtName.getText());
+                        linea.println(txtPassword.getText());
+                        linea.close();
+                        escribir.close();
+                        linea2.close();
+                        escribir2.close();
+
+                        JOptionPane.showMessageDialog(new JFrame(), "Bienvenido" + "\nRegistrado correctamente como: " + txtName.getText());
+                        dispose();
+                        JFrame frameLog = new Login();
+                        frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frameLog.setSize(1073,767);
+                        frameLog.setLocationRelativeTo(null);
+                        frameLog.setVisible(true);
+                    }
+                    
+                    if (Objects.equals(comboAdmin.getSelectedItem(), "Administrador")) {
+                        dispose();
+                        JFrame frameAdmin = new PassWordAdmin();
+                        frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        frameAdmin.setSize(400,302);
+                        frameAdmin.setLocationRelativeTo(null);
+                        frameAdmin.setVisible(true);
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 } else {
                     txtID.setText(null);
                 }
@@ -284,6 +310,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JButton botonRegresar;
     private javax.swing.JButton btnContac;
     private javax.swing.JButton btnRegis;
+    private javax.swing.JComboBox<String> comboAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
