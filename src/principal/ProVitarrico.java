@@ -1,6 +1,6 @@
 package principal;
 
-//yo
+//tu
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
