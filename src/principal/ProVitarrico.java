@@ -1,6 +1,6 @@
 package principal;
 
-//el jim
+//try try
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
