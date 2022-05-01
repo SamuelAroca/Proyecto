@@ -43,4 +43,16 @@ public class Seguridad {
         }
         return false;
     }
+    
+    public boolean passWord(String[] contraseñaDada, String contraseña) {
+        
+        for (String interador : contraseñaDada) {
+           if (interador.equals(contraseña)) {
+                JOptionPane.showMessageDialog(null, "Contraseña correcta");
+                return true;
+            } 
+        }
+            
+        return false;
+    }
 }

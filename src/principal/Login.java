@@ -213,7 +213,7 @@ public class Login extends javax.swing.JFrame {
                     dispose();
                     JFrame frameAdmin = new Admins();
                     frameAdmin.setResizable(false);
-                    frameAdmin.setSize(1095,785);
+                    frameAdmin.setSize(758,503);
                     frameAdmin.setLocationRelativeTo(null);
                     frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frameAdmin.setVisible(true);

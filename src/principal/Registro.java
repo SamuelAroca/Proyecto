@@ -14,6 +14,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Registro extends javax.swing.JFrame {
+    
+    private static final String PassWord = "hola123";
 
     
     public Registro() {
@@ -231,21 +233,81 @@ public class Registro extends javax.swing.JFrame {
                     }
                     
                     if (Objects.equals(comboAdmin.getSelectedItem(), "Administrador")) {
-                        dispose();
+                        
                         JFrame frameAdmin = new PassWordAdmin();
                         frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         frameAdmin.setSize(400,302);
                         frameAdmin.setLocationRelativeTo(null);
                         frameAdmin.setVisible(true);
                         
+                        FileReader fr2;
+                        Scanner sc2;
+                        
+                        int nLineas2 = 0;
+                        int j = 0;
+                        String[] passWord;
+                        String lineaLeer2;
+                        String fichero2 = "contraseñaAdmin.txt";
+                        sc2 = new Scanner(new File(fichero2));
+                        File f2 = new File(fichero);
+                        fr2 = new FileReader(f2);
+                        BufferedReader br2 = new BufferedReader(fr);
+
+                        while((lineaLeer2 = br2.readLine()) != null) {
+                                nLineas2++;      
+                        }
+
+                        passWord = new String[nLineas];//Tamaño del arreglo
+
+                        while(sc2.hasNextLine()) {
+                            passWord[j++] = sc2.nextLine();//Almacenado cada linea en una posicion
+                        }
+                        fr2.close();
+                        
+                        if (s.passWord(passWord, PassWord)) {
+                            File archivo3;
+        
+                            FileWriter escribir3;
+
+                            PrintWriter linea3;
+
+                            archivo3 = new File("admins.txt");
+
+
+                            if(!archivo3.exists()){
+                                try{
+                                    archivo3.createNewFile();
+                                    escribir3 = new FileWriter(archivo3,true);
+                                    linea3 = new PrintWriter(escribir3);
+                                    linea3.close();
+                                    escribir3.close();
+
+                                }catch(IOException e){
+                                    JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
+                                }
+
+                            }else{
+
+                                try{                                                            
+                                    escribir3 = new FileWriter(archivo3,true);
+                                    linea3 = new PrintWriter(escribir3);
+
+                                    linea3.println(txtID.getText());
+                                    linea2.println(txtID.getText());
+
+                                    linea3.println(txtName.getText());
+                                    linea3.println(txtPassword.getText());                               
+
+                                    linea.close();
+                                    escribir.close();
+
+                                } catch(IOException e){
+                                    JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
+                                }
+                            }
+                            
+                        }
                     }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     
                 } else {
                     txtID.setText(null);
