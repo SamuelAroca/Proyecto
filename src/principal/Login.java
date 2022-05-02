@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 import java.util.logging.*;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class Login extends javax.swing.JFrame {
     

@@ -10,8 +10,6 @@ public class Admins extends javax.swing.JFrame {
         initComponents();
     }
 
-    
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -53,9 +51,6 @@ public class Admins extends javax.swing.JFrame {
         frameProductos.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameProductos.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

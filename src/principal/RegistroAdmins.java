@@ -5,15 +5,14 @@ import java.util.*;
 import java.util.logging.*;
 import javax.swing.*;
 
-public class Registro extends javax.swing.JFrame {
+public class RegistroAdmins extends javax.swing.JFrame {
     
-    private static final String PassWord = "hola123";
-
-    
-    public Registro() {
+    public RegistroAdmins() {
         initComponents();
         rootPane.setDefaultButton(btnRegis);
     }
+    
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -34,7 +33,6 @@ public class Registro extends javax.swing.JFrame {
         lblTitle1 = new javax.swing.JLabel();
         labelRegresar4 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -45,7 +43,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BIENVENIDO.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/REGISTRO DE USUARIO.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/REGISTRO DE ADMINS_1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
         btnContac.setBackground(new java.awt.Color(235, 197, 30));
@@ -128,17 +126,6 @@ public class Registro extends javax.swing.JFrame {
         txtPassword.setBackground(new java.awt.Color(229, 229, 229));
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 470, 50));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnAdmins.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
-
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 580, 770));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
@@ -147,6 +134,7 @@ public class Registro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisActionPerformed
+        
         if (!txtID.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPassword.getText().isEmpty()) {
             File archivo;
             File archivo2;
@@ -154,7 +142,7 @@ public class Registro extends javax.swing.JFrame {
             FileWriter escribir2;
             PrintWriter linea;
             PrintWriter linea2;
-            archivo = new File("usuarios.txt");
+            archivo = new File("admins.txt");
             archivo2 = new File("ids.txt");
 
             if(!archivo.exists()){
@@ -261,16 +249,6 @@ public class Registro extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_lblLogoMouseClicked
-    
-    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
-        dispose();
-        JFrame frameMain = new PantallaMain();  
-        frameMain.setResizable(false);
-        frameMain.setSize(1073,807);
-        frameMain.setLocationRelativeTo(null);
-        frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameMain.setVisible(true);
-    }//GEN-LAST:event_botonRegresarActionPerformed
 
     private void labelRegresar4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegresar4MouseClicked
         dispose();
@@ -282,21 +260,20 @@ public class Registro extends javax.swing.JFrame {
         frameLog.setVisible(true);
     }//GEN-LAST:event_labelRegresar4MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarActionPerformed
         dispose();
-        JFrame frameAdmin = new PassWordAdmin();
-        frameAdmin.setResizable(false);
-        frameAdmin.setSize(400,302);
-        frameAdmin.setLocationRelativeTo(null);
-        frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameAdmin.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        JFrame frameRegistro = new Registro();
+        frameRegistro.setResizable(false);
+        frameRegistro.setSize(1073,767);
+        frameRegistro.setLocationRelativeTo(null);
+        frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameRegistro.setVisible(true);
+    }//GEN-LAST:event_botonRegresarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;
     private javax.swing.JButton btnContac;
     private javax.swing.JButton btnRegis;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

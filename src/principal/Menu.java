@@ -12,7 +12,6 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
     }
 
-   
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -197,7 +196,7 @@ public class Menu extends javax.swing.JFrame {
         dispose();
         JFrame frameMain = new PantallaMain();
         frameMain.setResizable(false);
-        frameMain.setSize(1073,767);
+        frameMain.setSize(1073,807);
         frameMain.setLocationRelativeTo(null);
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setVisible(true);
