@@ -1,5 +1,14 @@
 package principal;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -129,10 +138,49 @@ public class AdminProducts extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
+        File archivo;
+        FileWriter escribir;
+        PrintWriter linea;
+        archivo = new File("products.txt");
+        
+
+        if(!archivo.exists()){
+            try{
+                archivo.createNewFile();
+                escribir = new FileWriter(archivo,true);
+                linea = new PrintWriter(escribir);
+                linea.close();
+                escribir.close();
+
+            }catch(IOException e){
+                JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
+            }
+
+        }else {
+            try{                              
+                escribir = new FileWriter(archivo,true);
+                linea = new PrintWriter(escribir);
+
+                if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
+                    linea.println(txtCode.getText());
+                    linea.println(txtName.getText());
+                    linea.println(txtPrice.getText());
+                    linea.println(txtAmount.getText());
+                    linea.close();
+                    escribir.close();
+                    
+                    JOptionPane.showMessageDialog(null, "Productos registrados correctamente");
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Porfavor rellene todos los espacios");
+                }    
+
+            }catch(IOException e){
+                JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
+            }           
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
