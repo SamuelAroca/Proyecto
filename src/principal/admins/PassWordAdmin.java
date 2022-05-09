@@ -1,6 +1,8 @@
-package principal;
+package principal.admins;
 
+import principal.admins.RegistroAdmins;
 import javax.swing.*;
+import principal.logANDres.Registro;
 
 public class PassWordAdmin extends javax.swing.JFrame {
     

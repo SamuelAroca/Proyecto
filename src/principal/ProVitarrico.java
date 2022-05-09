@@ -1,6 +1,7 @@
 package principal;
 
-//tu
+//ustedes
+import principal.logANDres.PantallaMain;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 

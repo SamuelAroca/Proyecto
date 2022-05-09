@@ -1,6 +1,7 @@
-package principal;
+package principal.logANDres;
 
 
+import principal.logANDres.Login;
 import javax.swing.JOptionPane;
 
 public class Seguridad {

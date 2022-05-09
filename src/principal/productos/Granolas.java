@@ -1,9 +1,12 @@
-package principal;
+package principal.productos;
 
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import principal.Contactos;
+import principal.logANDres.Login;
+import principal.logANDres.PantallaMain;
 
 
 public class Granolas extends javax.swing.JFrame {

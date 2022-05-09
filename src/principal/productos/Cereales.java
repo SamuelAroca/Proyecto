@@ -1,5 +1,5 @@
 
-package principal;
+package principal.productos;
 
 
 public class Cereales extends javax.swing.JFrame {

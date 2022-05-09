@@ -1,23 +1,26 @@
-package principal;
+package principal.administracion;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.*;
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import principal.admins.Admins;
 
 
-public class AdminProducts extends javax.swing.JFrame {
+public class AdminProductsR extends javax.swing.JFrame {
 
     DefaultTableModel dtm;
     Object[] o = new Object[4];
     
-    public AdminProducts() {
+    public AdminProductsR() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
     }
@@ -41,6 +44,7 @@ public class AdminProducts extends javax.swing.JFrame {
         btnGuardar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,7 +87,7 @@ public class AdminProducts extends javax.swing.JFrame {
         });
         jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, 130, 50));
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Guardar.png"))); // NOI18N
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
         btnGuardar.setBorderPainted(false);
         btnGuardar.setContentAreaFilled(false);
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +115,17 @@ public class AdminProducts extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblProducts);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 1040, 300));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Regresar_1.png"))); // NOI18N
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 700, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
 
@@ -123,12 +137,20 @@ public class AdminProducts extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCodeActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        File archivo;
+        FileWriter escribir;
+        PrintWriter linea;
+        archivo = new File("products.txt");
+        
         o[0] = txtCode.getText();
         o[1] = txtName.getText();
         o[2] = txtPrice.getText();
         o[3] = txtAmount.getText();
         
         dtm.addRow(o);
+        escribiArchivo();
+        
+        
         
         txtCode.setText(null);
         txtName.setText(null);
@@ -138,54 +160,52 @@ public class AdminProducts extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        File archivo;
-        FileWriter escribir;
-        PrintWriter linea;
-        archivo = new File("products.txt");
-        
-
-        if(!archivo.exists()){
-            try{
-                archivo.createNewFile();
-                escribir = new FileWriter(archivo,true);
-                linea = new PrintWriter(escribir);
-                linea.close();
-                escribir.close();
-
-            }catch(IOException e){
-                JOptionPane.showMessageDialog(null,"Error: " + e.getMessage());
-            }
-
-        }else {
-            try{                              
-                escribir = new FileWriter(archivo,true);
-                linea = new PrintWriter(escribir);
-
-                if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
-                    linea.println(txtCode.getText());
-                    linea.println(txtName.getText());
-                    linea.println(txtPrice.getText());
-                    linea.println(txtAmount.getText());
-                    linea.close();
-                    escribir.close();
-                    
-                    JOptionPane.showMessageDialog(null, "Productos registrados correctamente");
-
-                } else {
-                    JOptionPane.showMessageDialog(null, "Porfavor rellene todos los espacios");
-                }    
-
-            }catch(IOException e){
-                JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
-            }           
+        int fila= tblProducts.getSelectedRow();
+        if (fila >= 0){
+            dtm.removeRow(fila);
+        }else{
+            JOptionPane.showMessageDialog(null, "Seleccionar Fila");
         }
+        
+        
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        dispose();
+        JFrame frameAdmin = new Admins();
+        frameAdmin.setResizable(false);
+        frameAdmin.setSize(758, 503);
+        frameAdmin.setLocationRelativeTo(null);
+        frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameAdmin.setVisible(true);
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void escribiArchivo(){
+        String filePath = "products.txt";
+        File file = new File(filePath);
+        try {
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i = 0; i < tblProducts.getRowCount(); i++){//rows
+                for(int j = 0; j < tblProducts.getColumnCount(); j++){//columns
+                    bw.write(tblProducts.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            
+            bw.close();
+            fw.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

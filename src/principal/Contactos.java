@@ -1,6 +1,8 @@
 package principal;
 
 
+import principal.logANDres.PantallaMain;
+import principal.logANDres.Login;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

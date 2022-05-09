@@ -1,9 +1,12 @@
-package principal;
+package principal.productos;
 
+import principal.productos.Granolas;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
+import principal.logANDres.Login;
+import principal.logANDres.PantallaMain;
 
 public class Menu extends javax.swing.JFrame {
    
