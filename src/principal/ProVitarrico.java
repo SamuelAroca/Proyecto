@@ -1,6 +1,6 @@
 package principal;
 
-//ustedes
+//ustedess
 import principal.logANDres.PantallaMain;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
