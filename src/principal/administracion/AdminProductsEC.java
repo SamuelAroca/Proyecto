@@ -1,38 +1,30 @@
 package principal.administracion;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 import principal.admins.Admins;
 import java.util.logging.*;
+import javax.swing.JOptionPane;
 
 
 public class AdminProductsEC extends javax.swing.JFrame {
+    
+    DefaultTableModel dtm;
+    int filaSeleccionada;
 
     public AdminProductsEC() {
         initComponents();
+        dtm = (DefaultTableModel) tblProducts.getModel();
+        cargarDatos();
         
-        String filePath = "products.txt";
-        File file = new File(filePath);
         
-        try {
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-            
-            DefaultTableModel model = (DefaultTableModel)tblProducts.getModel();
-            Object[] lines = br.lines().toArray();
-            
-            for(int i = 0; i < lines.length; i++){
-                String[] row = lines[i].toString().split(" ");
-                model.addRow(row);
-            }
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
     }
 
@@ -51,7 +43,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
         txtPrice = new javax.swing.JTextField();
         txtAmount = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
@@ -90,6 +82,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
         btnAgregar.setToolTipText("");
         btnAgregar.setBorderPainted(false);
         btnAgregar.setContentAreaFilled(false);
+        btnAgregar.setFocusPainted(false);
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
@@ -97,15 +90,16 @@ public class AdminProductsEC extends javax.swing.JFrame {
         });
         jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, 130, 50));
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
-        btnGuardar.setBorderPainted(false);
-        btnGuardar.setContentAreaFilled(false);
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.setFocusPainted(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 130, 50));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 130, 50));
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,6 +117,11 @@ public class AdminProductsEC extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblProducts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblProductsMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblProducts);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
@@ -130,6 +129,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Regresar_1.png"))); // NOI18N
         btnRegresar.setBorderPainted(false);
         btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setFocusPainted(false);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
@@ -143,37 +143,35 @@ public class AdminProductsEC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodeActionPerformed
-        
+        if (rootPaneCheckingEnabled) {
+            
+        }
     }//GEN-LAST:event_txtCodeActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        /*String filePath = "products.txt";
-        File file = new File(filePath);
-        
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String firstLine = br.readLine().trim();
-            String[] columnsName = firstLine.split(",");
-            DefaultTableModel model = (DefaultTableModel) tblProducts.getModel();
-            model.setColumnIdentifiers(columnsName);
-            
-            Object[] tableLines = br.lines().toArray();
-            
-            for (int i = 0; i < tableLines.length; i++) {
-                String line = tableLines[i].toString().trim();
-                String[] dataRow = line.split(",");
-                model.addRow(dataRow);
-            }
-            
-            
-        } catch (Exception e) {
-            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, e);
-        }*/
+        filaSeleccionada = tblProducts.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            tblProducts.setValueAt(txtCode.getText(), filaSeleccionada, 0);
+            tblProducts.setValueAt(txtName.getText(), filaSeleccionada, 1);
+            tblProducts.setValueAt(txtPrice.getText(), filaSeleccionada, 2);
+            tblProducts.setValueAt(txtAmount.getText(), filaSeleccionada, 3);
+            limpiar();
+            filaSeleccionada = -1;
+        }else{
+            JOptionPane.showMessageDialog(null, "No has seleccionado ningun dato");
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        int fila= tblProducts.getSelectedRow();
+        if (fila >= 0){
+            dtm.removeRow(fila);
+        }else{
+            JOptionPane.showMessageDialog(null, "Seleccionar Fila");
+        }
+        actualizarTabla();
+        limpiar();
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         dispose();
@@ -185,11 +183,66 @@ public class AdminProductsEC extends javax.swing.JFrame {
         frameAdmin.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
+        int seleccionar = tblProducts.rowAtPoint(evt.getPoint());
+        txtCode.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 0)));
+        txtName.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 1)));
+        txtPrice.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 2)));
+        txtAmount.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 3)));
+    }//GEN-LAST:event_tblProductsMouseClicked
+    
+    private void actualizarTabla(){
+        String filePath = "products.txt";
+        File file = new File(filePath);
+        try {
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i = 0; i < tblProducts.getRowCount(); i++){
+                for(int j = 0; j < tblProducts.getColumnCount(); j++){
+                    bw.write(tblProducts.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void cargarDatos(){
+        String filePath = "products.txt";
+        File file = new File(filePath);
+        
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            
+            DefaultTableModel model = (DefaultTableModel)tblProducts.getModel();
+            Object[] lines = br.lines().toArray();
+            
+            for(int i = 0; i < lines.length; i++){
+                String[] row = lines[i].toString().split(" ");
+                model.addRow(row);
+            }
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void limpiar(){
+        txtCode.setText(null);
+        txtName.setText(null);
+        txtPrice.setText(null);
+        txtAmount.setText(null);
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;

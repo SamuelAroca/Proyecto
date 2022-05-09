@@ -3,12 +3,11 @@ package principal.administracion;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.logging.*;
-import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,6 +22,7 @@ public class AdminProductsR extends javax.swing.JFrame {
     public AdminProductsR() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
+        cargarDatos();
     }
 
     
@@ -41,7 +41,7 @@ public class AdminProductsR extends javax.swing.JFrame {
         txtPrice = new javax.swing.JTextField();
         txtAmount = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
@@ -87,15 +87,15 @@ public class AdminProductsR extends javax.swing.JFrame {
         });
         jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, 130, 50));
 
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
-        btnGuardar.setBorderPainted(false);
-        btnGuardar.setContentAreaFilled(false);
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setContentAreaFilled(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 130, 50));
+        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 130, 50));
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,39 +136,16 @@ public class AdminProductsR extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodeActionPerformed
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        File archivo;
-        FileWriter escribir;
-        PrintWriter linea;
-        archivo = new File("products.txt");
-        
-        o[0] = txtCode.getText();
-        o[1] = txtName.getText();
-        o[2] = txtPrice.getText();
-        o[3] = txtAmount.getText();
-        
-        dtm.addRow(o);
-        escribiArchivo();
-        
-        
-        
-        txtCode.setText(null);
-        txtName.setText(null);
-        txtPrice.setText(null);
-        txtAmount.setText(null);
-        
-    }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int fila= tblProducts.getSelectedRow();
         if (fila >= 0){
             dtm.removeRow(fila);
         }else{
-            JOptionPane.showMessageDialog(null, "Seleccionar Fila");
+            JOptionPane.showMessageDialog(null, "Seleccione una Fila");
         }
+        actualizarTabla();
         
-        
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         dispose();
@@ -180,6 +157,23 @@ public class AdminProductsR extends javax.swing.JFrame {
         frameAdmin.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+
+        o[0] = txtCode.getText();
+        o[1] = txtName.getText();
+        o[2] = txtPrice.getText();
+        o[3] = txtAmount.getText();
+
+        dtm.addRow(o);
+        escribiArchivo();
+
+        txtCode.setText(null);
+        txtName.setText(null);
+        txtPrice.setText(null);
+        txtAmount.setText(null);
+
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
     private void escribiArchivo(){
         String filePath = "products.txt";
         File file = new File(filePath);
@@ -187,8 +181,8 @@ public class AdminProductsR extends javax.swing.JFrame {
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
             
-            for(int i = 0; i < tblProducts.getRowCount(); i++){//rows
-                for(int j = 0; j < tblProducts.getColumnCount(); j++){//columns
+            for(int i = 0; i < tblProducts.getRowCount(); i++){
+                for(int j = 0; j < tblProducts.getColumnCount(); j++){
                     bw.write(tblProducts.getValueAt(i, j).toString()+" ");
                 }
                 bw.newLine();
@@ -201,10 +195,51 @@ public class AdminProductsR extends javax.swing.JFrame {
             Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    private void actualizarTabla(){
+        String filePath = "products.txt";
+        File file = new File(filePath);
+        try {
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i = 0; i < tblProducts.getRowCount(); i++){
+                for(int j = 0; j < tblProducts.getColumnCount(); j++){
+                    bw.write(tblProducts.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminProductsR.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void cargarDatos(){
+        String filePath = "products.txt";
+        File file = new File(filePath);
+        
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            
+            DefaultTableModel model = (DefaultTableModel)tblProducts.getModel();
+            Object[] lines = br.lines().toArray();
+            
+            for(int i = 0; i < lines.length; i++){
+                String[] row = lines[i].toString().split(" ");
+                model.addRow(row);
+            }
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(AdminProductsR.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
