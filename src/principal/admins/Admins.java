@@ -3,6 +3,7 @@ package principal.admins;
 import principal.administracion.AdminProductsR;
 import javax.swing.JFrame;
 import principal.administracion.AdminProductsEC;
+import principal.logANDres.Login;
 
 
 public class Admins extends javax.swing.JFrame {
@@ -17,6 +18,7 @@ public class Admins extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -35,7 +37,7 @@ public class Admins extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 150, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 150, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/AdminP.png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -46,7 +48,19 @@ public class Admins extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 150, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 150, -1));
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresarVerde.png"))); // NOI18N
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setFocusPainted(false);
+        btnRegresar.setFocusable(false);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MENÚ DE ADMINISTRADORES (1).png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, 70));
@@ -78,7 +92,18 @@ public class Admins extends javax.swing.JFrame {
         frameProductos2.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        dispose();
+        JFrame frameLogin = new Login();
+        frameLogin.setResizable(false);
+        frameLogin.setSize(1089, 795);
+        frameLogin.setLocationRelativeTo(null);
+        frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameLogin.setVisible(true);
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

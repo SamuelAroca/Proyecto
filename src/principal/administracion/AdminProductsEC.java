@@ -160,6 +160,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "No has seleccionado ningun dato");
         }
+        actualizarTabla();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
