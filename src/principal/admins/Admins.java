@@ -8,7 +8,6 @@ import principal.logANDres.Login;
 
 public class Admins extends javax.swing.JFrame {
 
-    
     public Admins() {
         initComponents();
     }

@@ -1,18 +1,10 @@
 package principal.administracion;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import javax.swing.JFrame;
-import javax.swing.table.DefaultTableModel;
+import java.io.*;
+import javax.swing.*;
+import javax.swing.table.*;
 import principal.admins.Admins;
 import java.util.logging.*;
-import javax.swing.JOptionPane;
-
 
 public class AdminProductsEC extends javax.swing.JFrame {
     
@@ -22,10 +14,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
     public AdminProductsEC() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
-        cargarDatos();
-        
-        
-        
+        cargarDatos();               
     }
 
     @SuppressWarnings("unchecked")
@@ -67,12 +56,6 @@ public class AdminProductsEC extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
-
-        txtCode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodeActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 680, 50));
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
@@ -142,12 +125,6 @@ public class AdminProductsEC extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodeActionPerformed
-        if (rootPaneCheckingEnabled) {
-            
-        }
-    }//GEN-LAST:event_txtCodeActionPerformed
-
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         filaSeleccionada = tblProducts.getSelectedRow();
         if (filaSeleccionada != -1) {
@@ -212,7 +189,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
         }
     }
     
-    public void cargarDatos(){
+    private void cargarDatos(){
         String filePath = "products.txt";
         File file = new File(filePath);
         
@@ -223,8 +200,8 @@ public class AdminProductsEC extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)tblProducts.getModel();
             Object[] lines = br.lines().toArray();
             
-            for(int i = 0; i < lines.length; i++){
-                String[] row = lines[i].toString().split(" ");
+            for (Object line : lines) {
+                String[] row = line.toString().split(" ");
                 model.addRow(row);
             }
             

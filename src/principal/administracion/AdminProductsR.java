@@ -1,16 +1,9 @@
 package principal.administracion;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.logging.*;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
+import javax.swing.table.*;
 import principal.admins.Admins;
 
 
@@ -24,8 +17,6 @@ public class AdminProductsR extends javax.swing.JFrame {
         dtm = (DefaultTableModel) tblProducts.getModel();
         cargarDatos();
     }
-
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -65,12 +56,6 @@ public class AdminProductsR extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
-
-        txtCode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodeActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 680, 50));
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
@@ -132,10 +117,6 @@ public class AdminProductsR extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodeActionPerformed
-
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int fila= tblProducts.getSelectedRow();
         if (fila >= 0){
@@ -143,8 +124,7 @@ public class AdminProductsR extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null, "Seleccione una Fila");
         }
-        actualizarTabla();
-        
+        actualizarTabla();   
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -171,7 +151,6 @@ public class AdminProductsR extends javax.swing.JFrame {
         txtName.setText(null);
         txtPrice.setText(null);
         txtAmount.setText(null);
-
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void escribiArchivo(){
@@ -187,10 +166,8 @@ public class AdminProductsR extends javax.swing.JFrame {
                 }
                 bw.newLine();
             }
-            
             bw.close();
             fw.close();
-            
         } catch (IOException ex) {
             Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -216,7 +193,7 @@ public class AdminProductsR extends javax.swing.JFrame {
         }
     }
     
-    public void cargarDatos(){
+    private void cargarDatos(){
         String filePath = "products.txt";
         File file = new File(filePath);
         
@@ -227,11 +204,10 @@ public class AdminProductsR extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel)tblProducts.getModel();
             Object[] lines = br.lines().toArray();
             
-            for(int i = 0; i < lines.length; i++){
-                String[] row = lines[i].toString().split(" ");
+            for (Object line : lines) {
+                String[] row = line.toString().split(" ");
                 model.addRow(row);
-            }
-            
+            }          
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AdminProductsR.class.getName()).log(Level.SEVERE, null, ex);
         }

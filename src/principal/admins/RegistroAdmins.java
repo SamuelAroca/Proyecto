@@ -172,7 +172,6 @@ public class RegistroAdmins extends javax.swing.JFrame {
                 FileReader fr;
                 Scanner sc;
                 try{                              
-
                     int nLineas = 0;
                     int i = 0;
                     String[] ides;

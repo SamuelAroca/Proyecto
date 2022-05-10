@@ -1,6 +1,5 @@
 package principal.admins;
 
-import principal.admins.RegistroAdmins;
 import javax.swing.*;
 import principal.logANDres.Registro;
 
@@ -12,7 +11,6 @@ public class PassWordAdmin extends javax.swing.JFrame {
         rootPane.setDefaultButton(botonAcceder);
         initComponents();
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -69,7 +67,6 @@ public class PassWordAdmin extends javax.swing.JFrame {
             frameRegisAdmins.setLocationRelativeTo(null);
             frameRegisAdmins.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frameRegisAdmins.setVisible(true);
-            
         } else {
             JOptionPane.showMessageDialog(null, "Contraseña Incorrecta");
         }
@@ -84,10 +81,7 @@ public class PassWordAdmin extends javax.swing.JFrame {
         frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameRegistro.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    
-    
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAcceder;
     private javax.swing.JButton jButton2;

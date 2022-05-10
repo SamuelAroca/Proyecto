@@ -41,6 +41,7 @@ public class PantallaMain extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
         labelVideo = new javax.swing.JLabel();
@@ -54,6 +55,9 @@ public class PantallaMain extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/GranolaImage.jpeg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 389, 70, 100));
 
         labelTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Titulo Main.png"))); // NOI18N
         jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
@@ -162,6 +166,7 @@ public class PantallaMain extends javax.swing.JFrame {
     private javax.swing.JLabel botonContactos;
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonRegistro;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFondo;
     private javax.swing.JLabel labelLogo;

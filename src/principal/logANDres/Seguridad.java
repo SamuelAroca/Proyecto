@@ -1,7 +1,5 @@
 package principal.logANDres;
 
-
-import principal.logANDres.Login;
 import javax.swing.JOptionPane;
 
 public class Seguridad {
@@ -30,7 +28,6 @@ public class Seguridad {
             JOptionPane.showMessageDialog(null, "3 Intentos fallidos, se cerrara el programa"," Inicio de seccion",JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
-        
         return false;
     }
     

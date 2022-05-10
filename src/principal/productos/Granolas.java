@@ -8,17 +8,12 @@ import principal.Contactos;
 import principal.logANDres.Login;
 import principal.logANDres.PantallaMain;
 
-
 public class Granolas extends javax.swing.JFrame {
-
     
     public Granolas() {
         initComponents();
         
-    }
-
-    
-    
+    }  
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -198,8 +193,6 @@ public class Granolas extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;

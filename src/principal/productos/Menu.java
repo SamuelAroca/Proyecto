@@ -1,6 +1,5 @@
 package principal.productos;
 
-import principal.productos.Granolas;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

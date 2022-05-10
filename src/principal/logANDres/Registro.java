@@ -12,7 +12,6 @@ public class Registro extends javax.swing.JFrame {
     
     private static final String PassWord = "hola123";
 
-    
     public Registro() {
         initComponents();
         rootPane.setDefaultButton(btnRegis);

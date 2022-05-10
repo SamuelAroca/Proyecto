@@ -19,19 +19,99 @@ public class Contactos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        face2 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        direccion2 = new javax.swing.JLabel();
+        direccion1 = new javax.swing.JLabel();
+        face1 = new javax.swing.JLabel();
+        insta1 = new javax.swing.JLabel();
+        insta2 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        whatsa = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
-        labelNumeros = new javax.swing.JLabel();
         botonRegresar = new javax.swing.JButton();
-        labelSerCliente = new javax.swing.JLabel();
-        labelRedes = new javax.swing.JLabel();
-        labelDireccion = new javax.swing.JLabel();
         labelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fijo 1.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Comunicate desde cualquier lugar del país_.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+
+        face2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/facebook 1.png"))); // NOI18N
+        jPanel1.add(face2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Dirigete a nuestras instalaciones.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, -1, -1));
+
+        direccion2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Dirección 1.png"))); // NOI18N
+        jPanel1.add(direccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 630, -1, -1));
+
+        direccion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Calle 34 # 85 C – 1, Medellín, Antioquia.png"))); // NOI18N
+        direccion1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                direccion1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(direccion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 650, -1, -1));
+
+        face1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/@vitarricooficial.png"))); // NOI18N
+        face1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                face1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(face1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, -1, -1));
+
+        insta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/@vitarricooficial.png"))); // NOI18N
+        insta1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                insta1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(insta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
+
+        insta2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Insta 1.png"))); // NOI18N
+        jPanel1.add(insta2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, -1, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Busca nuestras Redes Sociales.png"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/correo 1.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, -1, -1));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/servicio.al.cliente@vitarrico.com.co.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Escríbenos al correo electrónico_.png"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/(604) 250 5106.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Wpp 1.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+
+        whatsa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/WhatsApp 315 366 58 14.png"))); // NOI18N
+        whatsa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                whatsaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(whatsa, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, -1, -1));
 
         labelTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CONTACTOS.png"))); // NOI18N
         jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
@@ -44,9 +124,6 @@ public class Contactos extends javax.swing.JFrame {
         });
         jPanel1.add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, -1));
 
-        labelNumeros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Numeros.png"))); // NOI18N
-        jPanel1.add(labelNumeros, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 380, -1));
-
         botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar.png"))); // NOI18N
         botonRegresar.setBorder(null);
         botonRegresar.setBorderPainted(false);
@@ -58,17 +135,8 @@ public class Contactos extends javax.swing.JFrame {
         });
         jPanel1.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 670, -1, -1));
 
-        labelSerCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Correo.png"))); // NOI18N
-        jPanel1.add(labelSerCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
-
-        labelRedes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Redes.png"))); // NOI18N
-        jPanel1.add(labelRedes, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
-
-        labelDireccion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Dirección.png"))); // NOI18N
-        jPanel1.add(labelDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
-
         labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 2.png"))); // NOI18N
-        jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 740));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1079, 766));
 
@@ -94,15 +162,63 @@ public class Contactos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_labelLogoMouseClicked
 
+    private void direccion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_direccion1MouseClicked
+        try {
+            PantallaMain main = new PantallaMain();
+            main.enlace("https://goo.gl/maps/6MyDnA4diGVJcFer8");
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_direccion1MouseClicked
+
+    private void insta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insta1MouseClicked
+        try {
+            PantallaMain main = new PantallaMain();
+            main.enlace("https://www.instagram.com/vitarricooficial/");
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_insta1MouseClicked
+
+    private void face1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_face1MouseClicked
+       try {
+            PantallaMain main = new PantallaMain();
+            main.enlace("https://www.facebook.com/vitarricooficial");
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_face1MouseClicked
+
+    private void whatsaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_whatsaMouseClicked
+        try {
+            PantallaMain main = new PantallaMain();
+            main.enlace("https://wa.me/573153665814");
+        } catch (IOException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_whatsaMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;
+    private javax.swing.JLabel direccion1;
+    private javax.swing.JLabel direccion2;
+    private javax.swing.JLabel face1;
+    private javax.swing.JLabel face2;
+    private javax.swing.JLabel insta1;
+    private javax.swing.JLabel insta2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelDireccion;
     private javax.swing.JLabel labelFondo;
     private javax.swing.JLabel labelLogo;
-    private javax.swing.JLabel labelNumeros;
-    private javax.swing.JLabel labelRedes;
-    private javax.swing.JLabel labelSerCliente;
     private javax.swing.JLabel labelTitulo;
+    private javax.swing.JLabel whatsa;
     // End of variables declaration//GEN-END:variables
 }
