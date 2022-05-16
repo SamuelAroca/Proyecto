@@ -61,7 +61,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
         jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 680, 50));
 
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Agregar.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btnActualizar.png"))); // NOI18N
         btnAgregar.setToolTipText("");
         btnAgregar.setBorderPainted(false);
         btnAgregar.setContentAreaFilled(false);
