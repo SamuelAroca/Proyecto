@@ -1,6 +1,5 @@
 package principal.logANDres;
 
-import principal.productos.Menu;
 import principal.admins.Admins;
 import java.io.*;
 import java.util.*;
@@ -8,6 +7,7 @@ import java.util.Scanner;
 import java.util.logging.*;
 import javax.swing.*;
 import principal.Contactos;
+import principal.administracion.Tienda.Tienda;
 
 public class Login extends javax.swing.JFrame {
     
@@ -203,12 +203,11 @@ public class Login extends javax.swing.JFrame {
             if(Objects.equals(comboTipoUser.getSelectedItem(), "Usuario"))
                 if (s.validarUsuario(usuarios, userId, user, pwd, intentos)) {
                     dispose();
-                    JFrame frameMenu = new Menu();
-                    frameMenu.setResizable(false);
-                    frameMenu.setSize(1095,785);
-                    frameMenu.setLocationRelativeTo(null);
-                    frameMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    frameMenu.setVisible(true);
+                    JFrame frameTienda = new Tienda();
+                    frameTienda.setResizable(false);
+                    frameTienda.setLocationRelativeTo(null);
+                    frameTienda.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    frameTienda.setVisible(true);
                 }
             
             if(Objects.equals(comboTipoUser.getSelectedItem(), "Administrador"))

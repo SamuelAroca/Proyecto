@@ -1,7 +1,5 @@
 package principal.logANDres;
 
-import principal.logANDres.Registro;
-import principal.logANDres.Login;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;

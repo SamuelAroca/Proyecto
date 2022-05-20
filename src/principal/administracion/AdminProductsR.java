@@ -11,7 +11,7 @@ public class AdminProductsR extends javax.swing.JFrame {
 
     DefaultTableModel dtm;
     Object[] o = new Object[4];
-    
+        
     public AdminProductsR() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
@@ -36,6 +36,7 @@ public class AdminProductsR extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
+        txtProducts = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,6 +112,7 @@ public class AdminProductsR extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 700, -1, -1));
+        jPanel1.add(txtProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 360, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
 
@@ -150,7 +152,7 @@ public class AdminProductsR extends javax.swing.JFrame {
         txtCode.setText(null);
         txtName.setText(null);
         txtPrice.setText(null);
-        txtAmount.setText(null);
+        txtAmount.setText(null);              
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void escribiArchivo(){
@@ -229,5 +231,6 @@ public class AdminProductsR extends javax.swing.JFrame {
     private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtProducts;
     // End of variables declaration//GEN-END:variables
 }
