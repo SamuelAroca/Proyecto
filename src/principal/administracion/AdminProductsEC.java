@@ -3,10 +3,9 @@ package principal.administracion;
 import java.io.*;
 import javax.swing.*;
 import javax.swing.table.*;
-import principal.admins.Admins;
 import java.util.logging.*;
 
-public class AdminProductsEC extends javax.swing.JFrame {
+public class AdminProductsEC extends javax.swing.JPanel {
     
     DefaultTableModel dtm;
     int filaSeleccionada;
@@ -35,10 +34,8 @@ public class AdminProductsEC extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
-        btnRegresar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -109,20 +106,7 @@ public class AdminProductsEC extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Regresar_1.png"))); // NOI18N
-        btnRegresar.setBorderPainted(false);
-        btnRegresar.setContentAreaFilled(false);
-        btnRegresar.setFocusPainted(false);
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 700, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1075, 767));
-
-        pack();
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1075, 767));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -150,16 +134,6 @@ public class AdminProductsEC extends javax.swing.JFrame {
         actualizarTabla();
         limpiar();
     }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        dispose();
-        JFrame frameAdmin = new Admins();
-        frameAdmin.setResizable(false);
-        frameAdmin.setSize(758, 503);
-        frameAdmin.setLocationRelativeTo(null);
-        frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameAdmin.setVisible(true);
-    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
         int seleccionar = tblProducts.rowAtPoint(evt.getPoint());
@@ -221,7 +195,6 @@ public class AdminProductsEC extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

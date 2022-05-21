@@ -4,10 +4,8 @@ import java.io.*;
 import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.*;
-import principal.admins.Admins;
 
-
-public class AdminProductsR extends javax.swing.JFrame {
+public class AdminProductsR extends javax.swing.JPanel {
 
     DefaultTableModel dtm;
     Object[] o = new Object[4];
@@ -35,11 +33,8 @@ public class AdminProductsR extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
-        btnRegresar = new javax.swing.JButton();
-        txtProducts = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -103,20 +98,7 @@ public class AdminProductsR extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Regresar_1.png"))); // NOI18N
-        btnRegresar.setBorderPainted(false);
-        btnRegresar.setContentAreaFilled(false);
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 700, -1, -1));
-        jPanel1.add(txtProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 360, -1, -1));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
-
-        pack();
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -128,16 +110,6 @@ public class AdminProductsR extends javax.swing.JFrame {
         }
         actualizarTabla();   
     }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        dispose();
-        JFrame frameAdmin = new Admins();
-        frameAdmin.setResizable(false);
-        frameAdmin.setSize(758, 503);
-        frameAdmin.setLocationRelativeTo(null);
-        frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameAdmin.setVisible(true);
-    }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
@@ -218,7 +190,6 @@ public class AdminProductsR extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -231,6 +202,5 @@ public class AdminProductsR extends javax.swing.JFrame {
     private javax.swing.JTextField txtCode;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPrice;
-    private javax.swing.JTextField txtProducts;
     // End of variables declaration//GEN-END:variables
 }
