@@ -205,7 +205,8 @@ public class Login extends javax.swing.JFrame {
                 if (s.validarUsuario(usuarios, userId, user, pwd, intentos)) {
                     dispose();
                     JFrame frameTienda = new Tienda();
-                    frameTienda.setResizable(false);
+                    frameTienda.setResizable(true);
+                    frameTienda.setSize(1346,805);
                     frameTienda.setLocationRelativeTo(null);
                     frameTienda.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frameTienda.setVisible(true);
@@ -215,7 +216,7 @@ public class Login extends javax.swing.JFrame {
                 if(s.validarUsuario(admins, adminId, userAdmin, pwdAdmin, intentos)) {
                     dispose();
                     JFrame frameAdmin = new Admins();
-                    frameAdmin.setResizable(false);
+                    frameAdmin.setResizable(true);
                     frameAdmin.setSize(1346,805);
                     frameAdmin.setLocationRelativeTo(null);
                     frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

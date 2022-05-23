@@ -208,7 +208,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_cargarDatosActionPerformed
     
-    private void escribirArchivo(){
+    public void escribirArchivo(){
 
         String filePath = "products.txt";
         File file = new File(filePath);
@@ -249,7 +249,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
-    private void escribir(String filePath) {
+    public void escribir(String filePath) {
         File file = new File(filePath);
         String codigo;
         String nombre;
@@ -266,7 +266,7 @@ public class AdminProductsR extends javax.swing.JPanel {
             cantidad = txtAmount.getText();
             
             if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
-                bw.write(codigo + " " + nombre + " " + precio + " " + cantidad + "\n");
+                bw.write(codigo + " " + nombre + " " + precio + " " + cantidad);
                 bw.newLine();
             }
             
@@ -277,7 +277,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
-    private void cargarDatos(String filePath){
+    public void cargarDatos(String filePath){
         File file = new File(filePath);
         
         try {
