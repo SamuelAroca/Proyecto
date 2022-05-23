@@ -159,6 +159,7 @@ public class AdminProductsR extends javax.swing.JPanel {
             escribir("otros.txt");
         }
         
+        escribirArchivo();
         txtCode.setText(null);
         txtName.setText(null);
         txtPrice.setText(null);
@@ -166,6 +167,7 @@ public class AdminProductsR extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarActionPerformed
     
     private void escribirArchivo(){
+
         String filePath = "products.txt";
         File file = new File(filePath);
         try {
