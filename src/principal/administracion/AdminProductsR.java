@@ -208,31 +208,7 @@ public class AdminProductsR extends javax.swing.JPanel {
     }
     
     private void actualizar(String fichero) {
-        try {
-            int nLineas = 0;
-            int i = 0;
-            String[] producto;
-            String linea;
-            Scanner sc = new Scanner(new File(fichero));
-            File f = new File(fichero);
-            FileReader fr = new FileReader(f);
-            BufferedReader br = new BufferedReader(fr);
-            
-            while((linea = br.readLine()) != null) {
-                nLineas++;
-            }
-            producto = new String[nLineas];
-            
-            while(sc.hasNextLine()) {
-                producto[i++] = sc.nextLine();
-            }
-            
-            
-        } catch (IOException ex) {
-            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
+        //escoger tabla para leer
     }
     
     private void escribir(String filePath) {
