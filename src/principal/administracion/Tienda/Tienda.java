@@ -20,15 +20,12 @@ public class Tienda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         labelLogo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        rectangulo = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/Rectangle1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -50,13 +47,24 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/energia.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, -1, -1));
+
         labelLogo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/vitarrico_logo 4.png"))); // NOI18N
         labelLogo.setText("Vitarrico");
         getContentPane().add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/Rectangle1.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        rectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/Rectangle1.png"))); // NOI18N
+        getContentPane().add(rectangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         content.setBackground(new java.awt.Color(255, 255, 255));
         content.setForeground(new java.awt.Color(0, 0, 0));
@@ -72,7 +80,7 @@ public class Tienda extends javax.swing.JFrame {
             .addGap(0, 610, Short.MAX_VALUE)
         );
 
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 950, 610));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 950, 610));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,6 +94,11 @@ public class Tienda extends javax.swing.JFrame {
         Panel2 p2 = new Panel2();
         showPanel(p2);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void showPanel(JPanel p) {
         p.setSize(950,610);
@@ -102,8 +115,8 @@ public class Tienda extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButton3;
     public javax.swing.JLabel labelLogo;
+    private javax.swing.JLabel rectangulo;
     // End of variables declaration//GEN-END:variables
 }

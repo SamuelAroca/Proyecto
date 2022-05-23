@@ -101,16 +101,17 @@ public class Login extends javax.swing.JFrame {
         txtNombreLog.setToolTipText("Nombre registrado");
         jPanel2.add(txtNombreLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 470, 50));
 
-        btnLogin.setBackground(new java.awt.Color(160, 200, 78));
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setText("Ingresar");
-        btnLogin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 3 (1).png"))); // NOI18N
+        btnLogin.setBorder(null);
+        btnLogin.setBorderPainted(false);
+        btnLogin.setContentAreaFilled(false);
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, 150, 50));
+        jPanel2.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 650, 250, 70));
 
         lblTitle1.setForeground(new java.awt.Color(163, 156, 156));
         lblTitle1.setText("Ingresa tus credenciales");
@@ -215,7 +216,7 @@ public class Login extends javax.swing.JFrame {
                     dispose();
                     JFrame frameAdmin = new Admins();
                     frameAdmin.setResizable(false);
-                    frameAdmin.setSize(1340,767);
+                    frameAdmin.setSize(1346,805);
                     frameAdmin.setLocationRelativeTo(null);
                     frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frameAdmin.setVisible(true);

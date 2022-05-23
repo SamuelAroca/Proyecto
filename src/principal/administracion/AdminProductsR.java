@@ -38,7 +38,7 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TitleBar.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TitleBarAgregar.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCo.png"))); // NOI18N
@@ -119,15 +119,35 @@ public class AdminProductsR extends javax.swing.JPanel {
         o[3] = txtAmount.getText();
 
         dtm.addRow(o);
-        escribiArchivo();
+        escribirArchivo();
 
         txtCode.setText(null);
         txtName.setText(null);
         txtPrice.setText(null);
         txtAmount.setText(null);              
     }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void escribiArchivo(){
+    
+    private void escribirArchivo(){
+        String filePath = "products.txt";
+        File file = new File(filePath);
+        try {
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            for(int i = 0; i < tblProducts.getRowCount(); i++){
+                for(int j = 0; j < tblProducts.getColumnCount(); j++){
+                    bw.write(tblProducts.getValueAt(i, j).toString()+" ");
+                }
+                bw.newLine();
+            }
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void escribirGranolas() {
         String filePath = "products.txt";
         File file = new File(filePath);
         try {
