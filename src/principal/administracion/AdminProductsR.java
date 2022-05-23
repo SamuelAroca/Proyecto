@@ -14,7 +14,7 @@ public class AdminProductsR extends javax.swing.JPanel {
     public AdminProductsR() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
-        cargarDatos();
+        cargarDatos("products.txt");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -26,6 +26,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        cargarDatos = new javax.swing.JButton();
         txtCode = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
@@ -54,6 +55,17 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+
+        cargarDatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CargarDatos.png"))); // NOI18N
+        cargarDatos.setBorder(null);
+        cargarDatos.setBorderPainted(false);
+        cargarDatos.setContentAreaFilled(false);
+        cargarDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargarDatosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cargarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 286, 130, 60));
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 680, 50));
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
@@ -100,8 +112,8 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
 
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
-        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 290, 130, 30));
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos", "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
+        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 370, 130, 30));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
     }// </editor-fold>//GEN-END:initComponents
@@ -109,7 +121,7 @@ public class AdminProductsR extends javax.swing.JPanel {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         if (Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
             eliminar();
-            actualizar("granolas.txt");
+            
         }
         if (Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
             escribirArchivo();
@@ -165,6 +177,36 @@ public class AdminProductsR extends javax.swing.JPanel {
         txtPrice.setText(null);
         txtAmount.setText(null);              
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void cargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarDatosActionPerformed
+        dtm.getDataVector().removeAllElements();
+        tblProducts.updateUI();
+        
+        if (Objects.equals(comboTipo.getSelectedItem(), "Productos")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("products.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("granolas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("cereales.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("avenas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("bebidas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("otros.txt");
+        }
+    }//GEN-LAST:event_cargarDatosActionPerformed
     
     private void escribirArchivo(){
 
@@ -207,10 +249,6 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
-    private void actualizar(String fichero) {
-        //escoger tabla para leer
-    }
-    
     private void escribir(String filePath) {
         File file = new File(filePath);
         String codigo;
@@ -228,7 +266,7 @@ public class AdminProductsR extends javax.swing.JPanel {
             cantidad = txtAmount.getText();
             
             if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
-                bw.write(codigo + " " + nombre + " " + precio + " " + cantidad);
+                bw.write(codigo + " " + nombre + " " + precio + " " + cantidad + "\n");
                 bw.newLine();
             }
             
@@ -239,8 +277,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
-    private void cargarDatos(){
-        String filePath = "products.txt";
+    private void cargarDatos(String filePath){
         File file = new File(filePath);
         
         try {
@@ -272,6 +309,7 @@ public class AdminProductsR extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton cargarDatos;
     private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
