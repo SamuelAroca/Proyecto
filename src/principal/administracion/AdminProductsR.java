@@ -1,6 +1,7 @@
 package principal.administracion;
 
 import java.io.*;
+import java.util.*;
 import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -33,12 +34,13 @@ public class AdminProductsR extends javax.swing.JPanel {
         btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
+        comboTipo = new javax.swing.JComboBox<>();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TitleBar.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TitleBarAgregar.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCo.png"))); // NOI18N
@@ -98,17 +100,33 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
 
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
+        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 290, 130, 30));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        int fila= tblProducts.getSelectedRow();
-        if (fila >= 0){
-            dtm.removeRow(fila);
-        }else{
-            JOptionPane.showMessageDialog(null, "Seleccione una Fila");
+        if (Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
+            eliminar();
+            actualizar("granolas.txt");
         }
-        actualizarTabla();   
+        if (Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
+            escribirArchivo();
+            escribir("cereales.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
+            escribirArchivo();
+            escribir("avenas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
+            escribirArchivo();
+            escribir("bebidas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
+            escribirArchivo();
+            escribir("otros.txt");
+        }  
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -119,15 +137,35 @@ public class AdminProductsR extends javax.swing.JPanel {
         o[3] = txtAmount.getText();
 
         dtm.addRow(o);
-        escribiArchivo();
-
+        
+        if (Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
+            escribirArchivo();
+            escribir("granolas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
+            escribirArchivo();
+            escribir("cereales.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
+            escribirArchivo();
+            escribir("avenas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
+            escribirArchivo();
+            escribir("bebidas.txt");
+        }
+        if (Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
+            escribirArchivo();
+            escribir("otros.txt");
+        }
+        
         txtCode.setText(null);
         txtName.setText(null);
         txtPrice.setText(null);
         txtAmount.setText(null);              
     }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void escribiArchivo(){
+    
+    private void escribirArchivo(){
         String filePath = "products.txt";
         File file = new File(filePath);
         try {
@@ -167,6 +205,62 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
+    private void actualizar(String fichero) {
+        try {
+            int nLineas = 0;
+            int i = 0;
+            String[] producto;
+            String linea;
+            Scanner sc = new Scanner(new File(fichero));
+            File f = new File(fichero);
+            FileReader fr = new FileReader(f);
+            BufferedReader br = new BufferedReader(fr);
+            
+            while((linea = br.readLine()) != null) {
+                nLineas++;
+            }
+            producto = new String[nLineas];
+            
+            while(sc.hasNextLine()) {
+                producto[i++] = sc.nextLine();
+            }
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+    
+    private void escribir(String filePath) {
+        File file = new File(filePath);
+        String codigo;
+        String nombre;
+        String precio;
+        String cantidad;
+        
+        try {
+            FileWriter fw = new FileWriter(file,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            
+            codigo = txtCode.getText();
+            nombre = txtName.getText();
+            precio = txtPrice.getText();
+            cantidad = txtAmount.getText();
+            
+            if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
+                bw.write(codigo + " " + nombre + " " + precio + " " + cantidad);
+                bw.newLine();
+            }
+            
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void cargarDatos(){
         String filePath = "products.txt";
         File file = new File(filePath);
@@ -186,10 +280,21 @@ public class AdminProductsR extends javax.swing.JPanel {
             Logger.getLogger(AdminProductsR.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    private void eliminar() {
+        int fila = tblProducts.getSelectedRow();
+        if (fila >= 0){
+            dtm.removeRow(fila);
+        }else{
+            JOptionPane.showMessageDialog(null, "Seleccione una Fila");
+        }
+        actualizarTabla();   
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

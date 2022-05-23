@@ -19,16 +19,28 @@ public class Admins extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        content = new javax.swing.JPanel();
+        btnRegresar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 1070, 770));
+
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresarVerde.png"))); // NOI18N
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setFocusPainted(false);
+        btnRegresar.setFocusable(false);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ResP.png"))); // NOI18N
         jButton1.setToolTipText("");
@@ -42,7 +54,7 @@ public class Admins extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 150, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 150, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/AdminP.png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -53,26 +65,26 @@ public class Admins extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 150, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 150, -1));
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresarVerde.png"))); // NOI18N
-        btnRegresar.setBorderPainted(false);
-        btnRegresar.setContentAreaFilled(false);
-        btnRegresar.setFocusPainted(false);
-        btnRegresar.setFocusable(false);
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/energia.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/MENÚ DE ADMINISTRADORES (1).png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 70));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/vitarrico_logo 2.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, 180));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle.png"))); // NOI18N
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, -10, 1070, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -96,6 +108,11 @@ public class Admins extends javax.swing.JFrame {
         frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLogin.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     private void changePanels(JPanel p) {
         p.setSize(1075,767);
@@ -111,6 +128,7 @@ public class Admins extends javax.swing.JFrame {
     private javax.swing.JPanel content;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

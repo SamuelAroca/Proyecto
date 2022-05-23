@@ -43,6 +43,7 @@ public class PantallaMain extends javax.swing.JFrame {
         labelTitulo = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
         labelVideo = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         botonLogin = new javax.swing.JButton();
         botonRegistro = new javax.swing.JButton();
         botonContactos = new javax.swing.JLabel();
@@ -75,6 +76,17 @@ public class PantallaMain extends javax.swing.JFrame {
             }
         });
         jPanel1.add(labelVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, -1, -1));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/energia.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, -1, -1));
 
         botonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton Inicio.png"))); // NOI18N
         botonLogin.setBorder(null);
@@ -159,11 +171,17 @@ public class PantallaMain extends javax.swing.JFrame {
         frameContacto.setVisible(true);
     }//GEN-LAST:event_botonContactosMouseClicked
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel botonContactos;
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonRegistro;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFondo;
