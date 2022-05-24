@@ -17,8 +17,10 @@ public class PanelTienda extends javax.swing.JPanel {
     public PanelTienda() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
-        
         cargarDatos("granolas.txt");
+        txtPrice.setEditable(false);
+        txtCode.setEditable(false);
+        txtName.setEditable(false);
     }
 
     @SuppressWarnings("unchecked")

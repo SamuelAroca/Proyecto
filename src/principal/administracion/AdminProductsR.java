@@ -33,7 +33,6 @@ public class AdminProductsR extends javax.swing.JPanel {
         btnAgregar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
-        jTextArea1 = new javax.swing.JTextArea();
         comboTipo = new javax.swing.JComboBox<>();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,7 +73,7 @@ public class AdminProductsR extends javax.swing.JPanel {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, 130, 50));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 170, 130, 50));
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,11 +94,6 @@ public class AdminProductsR extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblProducts);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText(" Codigo De Los Productos\n\n 1. Granola (1)\n\n 2. Cereales (2)\n\n 3. Avenas (3)\n\n 4. Bebidas (4)\n\n 5. Otros (5)\n\n(Nota: Nombre sin espacios)");
-        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 450, 190, 210));
 
         comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
         comboTipo.addItemListener(new java.awt.event.ItemListener() {
@@ -247,7 +241,6 @@ public class AdminProductsR extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTable tblProducts;
     private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtCode;

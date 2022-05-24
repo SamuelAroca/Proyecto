@@ -1,7 +1,15 @@
 package principal.administracion.Tienda;
 
 import java.awt.BorderLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import principal.administracion.Tienda.panels.Carrito;
 import principal.administracion.Tienda.panels.PanelTienda;
@@ -15,6 +23,7 @@ public class Tienda extends javax.swing.JFrame {
         initComponents();
         PanelTienda pt = new PanelTienda();
         showPanel(pt);
+        cerrar();
     }
 
     
@@ -34,7 +43,6 @@ public class Tienda extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/Rectangle 1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -146,6 +154,35 @@ public class Tienda extends javax.swing.JFrame {
         content.repaint();
     }
     
+    private void cerrar() {
+        try {
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            addWindowListener(new WindowAdapter() {
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    try {
+                        confirmarSalida();
+                    } catch (IOException ex) {
+                        Logger.getLogger(Tienda.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            });
+            this.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }
+    
+    public void confirmarSalida() throws IOException {
+        int valor = JOptionPane.showConfirmDialog(this, "¿Esta seguro de cerrar la aplicación?","Advertencia",JOptionPane.YES_NO_OPTION);
+        
+        if (valor == JOptionPane.YES_OPTION) {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter("carrito.txt"))) {
+                bw.write("");
+                System.exit(0);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butonRegresar;
