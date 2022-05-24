@@ -1,6 +1,5 @@
 package principal.logANDres;
 
-import principal.logANDres.Login;
 import principal.admins.PassWordAdmin;
 import java.io.*;
 import java.util.*;
@@ -9,8 +8,6 @@ import javax.swing.*;
 import principal.Contactos;
 
 public class Registro extends javax.swing.JFrame {
-    
-    private static final String PassWord = "hola123";
 
     public Registro() {
         initComponents();
@@ -188,12 +185,10 @@ public class Registro extends javax.swing.JFrame {
                 }catch(IOException e){
                     JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
                 }
-
             }else{
                 FileReader fr;
                 Scanner sc;
                 try{                              
-
                     int nLineas = 0;
                     int i = 0;
                     String[] ides;
@@ -243,11 +238,9 @@ public class Registro extends javax.swing.JFrame {
                         frameLog.setSize(1073,767);
                         frameLog.setLocationRelativeTo(null);
                         frameLog.setVisible(true);
-
                     } else {
                         txtID.setText(null);
                     }
-
                 }catch(IOException e){
                     JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
                 }           

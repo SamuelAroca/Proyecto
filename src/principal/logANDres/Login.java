@@ -12,7 +12,6 @@ import principal.administracion.Tienda.Tienda;
 public class Login extends javax.swing.JFrame {
     
     private static Scanner sc, sc2;
-    
     private static int intentos;
     private static String userId,user,pwd;
     private static String adminId,userAdmin,pwdAdmin;
@@ -21,12 +20,9 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         rootPane.setDefaultButton(btnLogin);
     }
-
     public static void setIntentos(int intentos) {
         Login.intentos = intentos;
     }
-    
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -212,7 +208,6 @@ public class Login extends javax.swing.JFrame {
                     frameTienda.setVisible(true);
                 }
             }
-            
             if(Objects.equals(comboTipoUser.getSelectedItem(), "Administrador")) {
                 if(s.validarUsuario(admins, adminId, userAdmin, pwdAdmin, intentos)) {
                     dispose();
@@ -224,10 +219,7 @@ public class Login extends javax.swing.JFrame {
                     frameAdmin.setVisible(true);
                 }
             }
-            
             fr.close();
-            
-                                
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -263,8 +255,6 @@ public class Login extends javax.swing.JFrame {
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setVisible(true);
     }//GEN-LAST:event_butonRegresarActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnContac;
     private javax.swing.JButton btnLogin;

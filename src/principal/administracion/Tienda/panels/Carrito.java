@@ -1,14 +1,7 @@
 package principal.administracion.Tienda.panels;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.*;
+import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import principal.administracion.AdminProductsEC;
@@ -253,7 +246,6 @@ public class Carrito extends javax.swing.JPanel {
                 String[] row = line.toString().split(" ");
                 model.addRow(row);
             }
-            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -265,7 +257,6 @@ public class Carrito extends javax.swing.JPanel {
         txtPrice.setText(null);
         txtAmount.setText(null);
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnComprar;

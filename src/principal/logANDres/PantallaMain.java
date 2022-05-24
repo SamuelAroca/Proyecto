@@ -13,7 +13,7 @@ public class PantallaMain extends javax.swing.JFrame {
 
     public PantallaMain() {
         initComponents();
-    }//hola
+    }
     
     public void enlace(String enlaceAAceder) throws IOException {
         Desktop enlace = Desktop.getDesktop();
@@ -33,7 +33,6 @@ public class PantallaMain extends javax.swing.JFrame {
             e.getMessage();
         }
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -135,7 +134,6 @@ public class PantallaMain extends javax.swing.JFrame {
         frameLog.setLocationRelativeTo(null);
         frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLog.setVisible(true);
-        
     }//GEN-LAST:event_botonLoginActionPerformed
 
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
@@ -175,8 +173,6 @@ public class PantallaMain extends javax.swing.JFrame {
         dispose();
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel botonContactos;
     private javax.swing.JButton botonLogin;

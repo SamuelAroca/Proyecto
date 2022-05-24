@@ -15,10 +15,8 @@ import principal.administracion.Tienda.panels.Carrito;
 import principal.administracion.Tienda.panels.PanelTienda;
 import principal.logANDres.Login;
 
-
 public class Tienda extends javax.swing.JFrame {
 
-    
     public Tienda() {
         initComponents();
         PanelTienda pt = new PanelTienda();
@@ -26,7 +24,6 @@ public class Tienda extends javax.swing.JFrame {
         cerrar();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -130,8 +127,7 @@ public class Tienda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        dispose();
-        System.exit(0);
+        cerrar();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
@@ -183,7 +179,6 @@ public class Tienda extends javax.swing.JFrame {
             }
         }
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butonRegresar;
     private javax.swing.JPanel content;

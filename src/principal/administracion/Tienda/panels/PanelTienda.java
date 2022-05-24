@@ -2,8 +2,7 @@ package principal.administracion.Tienda.panels;
 
 import java.io.*;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import principal.administracion.AdminProductsEC;
@@ -22,7 +21,6 @@ public class PanelTienda extends javax.swing.JPanel {
         txtCode.setEditable(false);
         txtName.setEditable(false);
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -72,7 +70,7 @@ public class PanelTienda extends javax.swing.JPanel {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, 130, 50));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 190, 130, 50));
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -154,13 +152,11 @@ public class PanelTienda extends javax.swing.JPanel {
             } else {
                 JOptionPane.showMessageDialog(null, "Porfavor ponga la cantidad a comprar","WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);
             }
-            
             bw.close();
             fw.close();
         } catch (IOException ex) {
             Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked

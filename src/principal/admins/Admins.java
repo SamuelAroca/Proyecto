@@ -7,7 +7,6 @@ import principal.administracion.AdminProductsEC;
 import principal.administracion.AdminProductsR;
 import principal.logANDres.Login;
 
-
 public class Admins extends javax.swing.JFrame {
 
     public Admins() {
@@ -15,7 +14,6 @@ public class Admins extends javax.swing.JFrame {
         JPanel p1 = new AdminProductsR();
         changePanels(p1);
     }
-
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

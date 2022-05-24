@@ -1,7 +1,7 @@
 package principal.administracion;
 
 import java.io.*;
-import java.util.Objects;
+import java.util.*;
 import javax.swing.*;
 import javax.swing.table.*;
 import java.util.logging.*;
@@ -276,7 +276,6 @@ public class AdminProductsEC extends javax.swing.JPanel {
     public static boolean validarNombre(String nombre) {
         return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
     }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnEliminar;

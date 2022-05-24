@@ -16,7 +16,6 @@ public class RegistroAdmins extends javax.swing.JFrame {
         initComponents();
         rootPane.setDefaultButton(btnRegis);
     }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -167,7 +166,6 @@ public class RegistroAdmins extends javax.swing.JFrame {
                 }catch(IOException e){
                     JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
                 }
-
             }else{
                 FileReader fr;
                 Scanner sc;
@@ -225,7 +223,6 @@ public class RegistroAdmins extends javax.swing.JFrame {
                     } else {
                         txtID.setText(null);
                     }
-
                 }catch(IOException e){
                     JOptionPane.showMessageDialog(new JFrame(),"Error: " + e.getMessage());
                 }           
@@ -273,7 +270,6 @@ public class RegistroAdmins extends javax.swing.JFrame {
         frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameRegistro.setVisible(true);
     }//GEN-LAST:event_botonRegresarActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;
     private javax.swing.JButton btnContac;
@@ -293,5 +289,4 @@ public class RegistroAdmins extends javax.swing.JFrame {
     private javax.swing.JTextField txtName;
     private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
-
 }
