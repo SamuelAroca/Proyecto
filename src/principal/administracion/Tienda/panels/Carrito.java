@@ -7,8 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -168,8 +166,12 @@ public class Carrito extends javax.swing.JPanel {
                 resultado = total * total2;
                 sumador += resultado;
             }
-       
             JOptionPane.showMessageDialog(null, "Su total es: " + sumador);
+            
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
+            bw.write("");
+            bw.close();
+            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

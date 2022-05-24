@@ -1,7 +1,6 @@
 package principal.administracion;
 
 import java.io.*;
-import java.util.*;
 import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -26,16 +25,14 @@ public class AdminProductsR extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        cargarDatos = new javax.swing.JButton();
         txtCode = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
         txtAmount = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
-        comboTipo = new javax.swing.JComboBox<>();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -55,17 +52,6 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
-
-        cargarDatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/CargarDatos.png"))); // NOI18N
-        cargarDatos.setBorder(null);
-        cargarDatos.setBorderPainted(false);
-        cargarDatos.setContentAreaFilled(false);
-        cargarDatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cargarDatosActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cargarDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 286, 130, 60));
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 680, 50));
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
@@ -80,17 +66,7 @@ public class AdminProductsR extends javax.swing.JPanel {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, 130, 50));
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
-        btnEliminar.setBorderPainted(false);
-        btnEliminar.setContentAreaFilled(false);
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 130, 50));
+        jPanel1.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 140, 130, 50));
 
         tblProducts.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -112,34 +88,13 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
 
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos", "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
-        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 370, 130, 30));
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText(" Codigo De Los Productos\n\n 1. Granola (1)\n\n 2. Cereales (2)\n\n 3. Avenas (3)\n\n 4. Bebidas (4)\n\n 5. Otros (5)");
+        jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 450, 190, 210));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
-            eliminar();
-            
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
-            escribirArchivo();
-            escribir("cereales.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
-            escribirArchivo();
-            escribir("avenas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
-            escribirArchivo();
-            escribir("bebidas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
-            escribirArchivo();
-            escribir("otros.txt");
-        }  
-    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
@@ -150,25 +105,32 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         dtm.addRow(o);
         
-        if (Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
-            escribirArchivo();
-            escribir("granolas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
-            escribirArchivo();
-            escribir("cereales.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
-            escribirArchivo();
-            escribir("avenas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
-            escribirArchivo();
-            escribir("bebidas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
-            escribirArchivo();
-            escribir("otros.txt");
+        String codigo = txtCode.getText();
+        
+        switch (codigo) {
+            case "1":
+                escribirArchivo();
+                escribir("granolas.txt");
+                break;
+            case "2":
+                escribirArchivo();
+                escribir("cereales.txt");
+                break;
+            case "3":
+                escribirArchivo();
+                escribir("avenas.txt");
+                break;
+            case "4":
+                escribirArchivo();
+                escribir("bebidas.txt");
+                break;
+            case "5":
+                escribirArchivo();
+                escribir("otros.txt");
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Introduzca un CODIGO valido");
+                break;
         }
         
         escribirArchivo();
@@ -177,36 +139,6 @@ public class AdminProductsR extends javax.swing.JPanel {
         txtPrice.setText(null);
         txtAmount.setText(null);              
     }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void cargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarDatosActionPerformed
-        dtm.getDataVector().removeAllElements();
-        tblProducts.updateUI();
-        
-        if (Objects.equals(comboTipo.getSelectedItem(), "Productos")) {
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("granolas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("cereales.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("avenas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("bebidas.txt");
-        }
-        if (Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("otros.txt");
-        }
-    }//GEN-LAST:event_cargarDatosActionPerformed
     
     public void escribirArchivo(){
 
@@ -226,26 +158,6 @@ public class AdminProductsR extends javax.swing.JPanel {
             fw.close();
         } catch (IOException ex) {
             Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    private void actualizarTabla(){
-        String filePath = "products.txt";
-        File file = new File(filePath);
-        try {
-            FileWriter fw = new FileWriter(file);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            for(int i = 0; i < tblProducts.getRowCount(); i++){
-                for(int j = 0; j < tblProducts.getColumnCount(); j++){
-                    bw.write(tblProducts.getValueAt(i, j).toString()+" ");
-                }
-                bw.newLine();
-            }
-            bw.close();
-            fw.close();
-        } catch (IOException ex) {
-            Logger.getLogger(AdminProductsR.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -277,7 +189,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
-    public void cargarDatos(String filePath){
+    private void cargarDatos(String filePath){
         File file = new File(filePath);
         
         try {
@@ -295,22 +207,9 @@ public class AdminProductsR extends javax.swing.JPanel {
             Logger.getLogger(AdminProductsR.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    private void eliminar() {
-        int fila = tblProducts.getSelectedRow();
-        if (fila >= 0){
-            dtm.removeRow(fila);
-        }else{
-            JOptionPane.showMessageDialog(null, "Seleccione una Fila");
-        }
-        actualizarTabla();   
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton cargarDatos;
-    private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -318,6 +217,7 @@ public class AdminProductsR extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTable tblProducts;
     private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtCode;

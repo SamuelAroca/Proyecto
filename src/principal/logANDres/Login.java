@@ -201,7 +201,7 @@ public class Login extends javax.swing.JFrame {
             
             Seguridad s = new Seguridad();
             
-            if(Objects.equals(comboTipoUser.getSelectedItem(), "Usuario"))
+            if(Objects.equals(comboTipoUser.getSelectedItem(), "Usuario")) {
                 if (s.validarUsuario(usuarios, userId, user, pwd, intentos)) {
                     dispose();
                     JFrame frameTienda = new Tienda();
@@ -211,8 +211,9 @@ public class Login extends javax.swing.JFrame {
                     frameTienda.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frameTienda.setVisible(true);
                 }
+            }
             
-            if(Objects.equals(comboTipoUser.getSelectedItem(), "Administrador"))
+            if(Objects.equals(comboTipoUser.getSelectedItem(), "Administrador")) {
                 if(s.validarUsuario(admins, adminId, userAdmin, pwdAdmin, intentos)) {
                     dispose();
                     JFrame frameAdmin = new Admins();
@@ -222,6 +223,7 @@ public class Login extends javax.swing.JFrame {
                     frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frameAdmin.setVisible(true);
                 }
+            }
             
             fr.close();
             

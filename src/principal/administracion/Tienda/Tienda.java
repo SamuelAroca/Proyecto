@@ -1,9 +1,11 @@
 package principal.administracion.Tienda;
 
 import java.awt.BorderLayout;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import principal.administracion.Tienda.panels.Carrito;
 import principal.administracion.Tienda.panels.PanelTienda;
+import principal.logANDres.Login;
 
 
 public class Tienda extends javax.swing.JFrame {
@@ -24,6 +26,7 @@ public class Tienda extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        butonRegresar = new javax.swing.JButton();
         labelLogo = new javax.swing.JLabel();
         rectangulo = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
@@ -68,6 +71,19 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 580, -1, -1));
 
+        butonRegresar.setBackground(new java.awt.Color(235, 197, 30));
+        butonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar.png"))); // NOI18N
+        butonRegresar.setToolTipText("");
+        butonRegresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        butonRegresar.setBorderPainted(false);
+        butonRegresar.setContentAreaFilled(false);
+        butonRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                butonRegresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(butonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 660, 130, 40));
+
         labelLogo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/vitarrico_logo 4.png"))); // NOI18N
         labelLogo.setText("Vitarrico");
@@ -83,14 +99,14 @@ public class Tienda extends javax.swing.JFrame {
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
+            .addGap(0, 1100, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGap(0, 770, Short.MAX_VALUE)
         );
 
-        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 1080, 720));
+        getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 1100, 770));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,8 +126,18 @@ public class Tienda extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
+        dispose();
+        JFrame frameMain = new Login();
+        frameMain.setResizable(false);
+        frameMain.setSize(1073,767);
+        frameMain.setLocationRelativeTo(null);
+        frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameMain.setVisible(true);
+    }//GEN-LAST:event_butonRegresarActionPerformed
+
     private void showPanel(JPanel p) {
-        p.setSize(1075,767);
+        p.setSize(1078,767);
         p.setLocation(0,0);
         
         content.removeAll();
@@ -122,6 +148,7 @@ public class Tienda extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton butonRegresar;
     private javax.swing.JPanel content;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
