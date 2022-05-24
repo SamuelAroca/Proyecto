@@ -1,6 +1,7 @@
 package principal.administracion;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.logging.*;
 import javax.swing.*;
 import javax.swing.table.*;
@@ -13,7 +14,7 @@ public class AdminProductsR extends javax.swing.JPanel {
     public AdminProductsR() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
-        cargarDatos("products.txt");
+        cargarDatos("granolas.txt");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -33,6 +34,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
         jTextArea1 = new javax.swing.JTextArea();
+        comboTipo = new javax.swing.JComboBox<>();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -53,6 +55,12 @@ public class AdminProductsR extends javax.swing.JPanel {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
+
+        txtName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtNameFocusLost(evt);
+            }
+        });
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 680, 50));
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
         jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 680, 50));
@@ -90,59 +98,88 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText(" Codigo De Los Productos\n\n 1. Granola (1)\n\n 2. Cereales (2)\n\n 3. Avenas (3)\n\n 4. Bebidas (4)\n\n 5. Otros (5)");
+        jTextArea1.setText(" Codigo De Los Productos\n\n 1. Granola (1)\n\n 2. Cereales (2)\n\n 3. Avenas (3)\n\n 4. Bebidas (4)\n\n 5. Otros (5)\n\n(Nota: Nombre sin espacios)");
         jPanel1.add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 450, 190, 210));
+
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
+        comboTipo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboTipoItemStateChanged(evt);
+            }
+        });
+        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 280, 130, 30));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
-        o[0] = txtCode.getText();
-        o[1] = txtName.getText();
-        o[2] = txtPrice.getText();
-        o[3] = txtAmount.getText();
-
-        dtm.addRow(o);
-        
         String codigo = txtCode.getText();
         
-        switch (codigo) {
-            case "1":
-                escribirArchivo();
-                escribir("granolas.txt");
-                break;
-            case "2":
-                escribirArchivo();
-                escribir("cereales.txt");
-                break;
-            case "3":
-                escribirArchivo();
-                escribir("avenas.txt");
-                break;
-            case "4":
-                escribirArchivo();
-                escribir("bebidas.txt");
-                break;
-            case "5":
-                escribirArchivo();
-                escribir("otros.txt");
-                break;
-            default:
-                JOptionPane.showMessageDialog(null, "Introduzca un CODIGO valido");
-                break;
+        if (validarNombre(txtName.getText())) {
+            if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigo.equals("1")) {
+                escribirTabla();
+                escribirArchivo("granolas.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Cereales") && codigo.equals("2")) {
+                escribirTabla();
+                escribirArchivo("cereales.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Avenas") && codigo.equals("3")) {
+                escribirTabla();
+                escribirArchivo("avenas.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas") && codigo.equals("4")) {
+                escribirTabla();
+                escribirArchivo("bebidas.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Otros") && codigo.equals("5")) {
+                escribirTabla();
+                escribirArchivo("otros.txt");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(null, "Por favor ponga un codigo valido");
+                txtCode.setText(null);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios");
         }
-        
-        escribirArchivo();
-        txtCode.setText(null);
-        txtName.setText(null);
-        txtPrice.setText(null);
-        txtAmount.setText(null);              
     }//GEN-LAST:event_btnAgregarActionPerformed
-    
-    public void escribirArchivo(){
 
-        String filePath = "products.txt";
+    private void comboTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboTipoItemStateChanged
+        dtm.getDataVector().removeAllElements();
+        tblProducts.updateUI();
+
+        if(Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("granolas.txt");
+        }
+        if(Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("cereales.txt");
+        }
+        if(Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("avenas.txt");
+        }
+        if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("bebidas.txt");
+        }
+        if(Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
+            dtm = (DefaultTableModel) tblProducts.getModel();
+            cargarDatos("otros.txt");
+        }
+    }//GEN-LAST:event_comboTipoItemStateChanged
+
+    private void txtNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNameFocusLost
+        if (!validarNombre(txtName.getText())) {
+            JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios");
+        }
+    }//GEN-LAST:event_txtNameFocusLost
+    
+    public void escribirArchivo(String filePath){
+
         File file = new File(filePath);
         try {
             FileWriter fw = new FileWriter(file);
@@ -161,32 +198,13 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
-    public void escribir(String filePath) {
-        File file = new File(filePath);
-        String codigo;
-        String nombre;
-        String precio;
-        String cantidad;
-        
-        try {
-            FileWriter fw = new FileWriter(file,true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            codigo = txtCode.getText();
-            nombre = txtName.getText();
-            precio = txtPrice.getText();
-            cantidad = txtAmount.getText();
-            
-            if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
-                bw.write(codigo + " " + nombre + " " + precio + " " + cantidad);
-                bw.newLine();
-            }
-            
-            bw.close();
-            fw.close();
-        } catch (IOException ex) {
-            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    private void escribirTabla() {
+        o[0] = txtCode.getText();
+        o[1] = txtName.getText();
+        o[2] = txtPrice.getText();
+        o[3] = txtAmount.getText();
+
+        dtm.addRow(o);
     }
     
     private void cargarDatos(String filePath){
@@ -207,9 +225,21 @@ public class AdminProductsR extends javax.swing.JPanel {
             Logger.getLogger(AdminProductsR.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    private void limpiar(){
+        txtCode.setText(null);
+        txtName.setText(null);
+        txtPrice.setText(null);
+        txtAmount.setText(null);
+    }
+    
+    public static boolean validarNombre(String nombre) {
+        return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.JComboBox<String> comboTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

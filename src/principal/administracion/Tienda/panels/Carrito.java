@@ -22,6 +22,9 @@ public class Carrito extends javax.swing.JPanel {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
         cargarDatos();
+        txtPrice.setEditable(false);
+        txtCode.setEditable(false);
+        txtName.setEditable(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -166,11 +169,13 @@ public class Carrito extends javax.swing.JPanel {
                 resultado = total * total2;
                 sumador += resultado;
             }
-            JOptionPane.showMessageDialog(null, "Su total es: " + sumador);
+            JOptionPane.showMessageDialog(null, "¡¡¡Gracias por su compra!!!" + "\n" + "Su total es: " + sumador);
             
             BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
             bw.write("");
             bw.close();
+            dtm.getDataVector().removeAllElements();
+            tblProducts.updateUI();
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);

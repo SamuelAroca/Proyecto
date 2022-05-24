@@ -14,7 +14,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
     public AdminProductsEC() {
         initComponents();
         dtm = (DefaultTableModel) tblProducts.getModel();
-        cargarDatos("products.txt");               
+        cargarDatos("granolas.txt");               
     }
 
     @SuppressWarnings("unchecked")
@@ -108,78 +108,48 @@ public class AdminProductsEC extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 850, 300));
 
-        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Productos", "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
-        comboTipo.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                comboTipoFocusLost(evt);
+        comboTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Granolas", "Cereales", "Avenas", "Bebidas", "Otros" }));
+        comboTipo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboTipoItemStateChanged(evt);
             }
         });
-        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 300, 130, 30));
+        jPanel1.add(comboTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 390, 130, 30));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1075, 767));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        filaSeleccionada = tblProducts.getSelectedRow();
-        if (filaSeleccionada != -1) {
-            tblProducts.setValueAt(txtCode.getText(), filaSeleccionada, 0);
-            tblProducts.setValueAt(txtName.getText(), filaSeleccionada, 1);
-            tblProducts.setValueAt(txtPrice.getText(), filaSeleccionada, 2);
-            tblProducts.setValueAt(txtAmount.getText(), filaSeleccionada, 3);
-            limpiar();
-            filaSeleccionada = -1;
-        }else{
-            JOptionPane.showMessageDialog(null, "No has seleccionado ningun dato");
-        }
-        
-        if(Objects.equals(comboTipo.getSelectedItem(), "Productos")) {
-            actualizarTabla("products.txt");
-            limpiar();
-        }
-        if(Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
-            actualizarTabla("granolas.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
-        }
-        if(Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
-            actualizarTabla("cereales.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
-        }
-        if(Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
-           actualizarTabla("avenas.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt"); 
-            actualizarTabla("products.txt");
-            limpiar();
-        }
-        if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
-            actualizarTabla("bebidas.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
-        }
-        if(Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
-            actualizarTabla("otros.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
+        if (validarNombre(txtName.getText())) {
+            
+            String codigo = txtCode.getText();
+            
+            if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigo.equals("1")) {
+                actualizar();
+                actualizarArchivo("granolas.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Cereales") && codigo.equals("2")) {
+                actualizar();
+                actualizarArchivo("cereales.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Avenas") && codigo.equals("3")) {
+                actualizar();
+                actualizarArchivo("avenas.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas") && codigo.equals("4")) {
+                actualizar();
+                actualizarArchivo("bebidas.txt");
+                limpiar();
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Otros") && codigo.equals("5")) {
+                actualizar();
+                actualizarArchivo("otros.txt");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(null, "Por favor ponga un codigo valido");
+                txtCode.setText(null);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Nombre con mayúscula inicial y sin espacios");
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -191,57 +161,22 @@ public class AdminProductsEC extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Seleccionar Fila");
         }
         
-        if(Objects.equals(comboTipo.getSelectedItem(), "Productos")) {
-            actualizarTabla("products.txt");
-            limpiar();
-        }
         if(Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
-            actualizarTabla("granolas.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
+            actualizarArchivo("granolas.txt");
         }
         if(Objects.equals(comboTipo.getSelectedItem(), "Cereales")) {
-            actualizarTabla("cereales.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
+            actualizarArchivo("cereales.txt");
         }
         if(Objects.equals(comboTipo.getSelectedItem(), "Avenas")) {
-           actualizarTabla("avenas.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt"); 
-            actualizarTabla("products.txt");
-            limpiar();
+            actualizarArchivo("avenas.txt");
         }
         if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas")) {
-            actualizarTabla("bebidas.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
+            actualizarArchivo("bebidas.txt");
         }
         if(Objects.equals(comboTipo.getSelectedItem(), "Otros")) {
-            actualizarTabla("otros.txt");
-            dtm.getDataVector().removeAllElements();
-            tblProducts.updateUI();
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-            actualizarTabla("products.txt");
-            limpiar();
+            actualizarArchivo("otros.txt");
         }
-        
-        
+        limpiar();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
@@ -252,14 +187,10 @@ public class AdminProductsEC extends javax.swing.JPanel {
         txtAmount.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 3)));
     }//GEN-LAST:event_tblProductsMouseClicked
 
-    private void comboTipoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboTipoFocusLost
+    private void comboTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboTipoItemStateChanged
         dtm.getDataVector().removeAllElements();
         tblProducts.updateUI();
-        
-        if(Objects.equals(comboTipo.getSelectedItem(), "Productos")) {
-            dtm = (DefaultTableModel) tblProducts.getModel();
-            cargarDatos("products.txt");
-        }
+
         if(Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
             dtm = (DefaultTableModel) tblProducts.getModel();
             cargarDatos("granolas.txt");
@@ -280,9 +211,9 @@ public class AdminProductsEC extends javax.swing.JPanel {
             dtm = (DefaultTableModel) tblProducts.getModel();
             cargarDatos("otros.txt");
         }
-    }//GEN-LAST:event_comboTipoFocusLost
+    }//GEN-LAST:event_comboTipoItemStateChanged
     
-    private void actualizarTabla(String filePath){
+    private void actualizarArchivo(String filePath){
         File file = new File(filePath);
         try {
             FileWriter fw = new FileWriter(file);
@@ -321,6 +252,20 @@ public class AdminProductsEC extends javax.swing.JPanel {
         }
     }
     
+    private void actualizar() {
+        filaSeleccionada = tblProducts.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            tblProducts.setValueAt(txtCode.getText(), filaSeleccionada, 0);
+            tblProducts.setValueAt(txtName.getText(), filaSeleccionada, 1);
+            tblProducts.setValueAt(txtPrice.getText(), filaSeleccionada, 2);
+            tblProducts.setValueAt(txtAmount.getText(), filaSeleccionada, 3);
+            limpiar();
+            filaSeleccionada = -1;
+        }else{
+            JOptionPane.showMessageDialog(null, "No has seleccionado ningun dato");
+        }
+    }
+    
     public void limpiar(){
         txtCode.setText(null);
         txtName.setText(null);
@@ -328,7 +273,10 @@ public class AdminProductsEC extends javax.swing.JPanel {
         txtAmount.setText(null);
     }
     
-
+    public static boolean validarNombre(String nombre) {
+        return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnEliminar;
