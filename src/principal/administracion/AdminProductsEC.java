@@ -120,27 +120,29 @@ public class AdminProductsEC extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        if (validarNombre(txtName.getText())) {
+        if (validarNombre(txtName.getText()) && validarPrecio(txtPrice.getText()) && validarCabtidad(txtAmount.getText())) {
             
             String codigo = txtCode.getText();
+            String[] codigosplit;
+            codigosplit = codigo.split("-");
             
-            if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigo.equals("1")) {
+            if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigosplit[1].equals("1")) {
                 actualizar();
                 actualizarArchivo("granolas.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Cereales") && codigo.equals("2")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Cereales") && codigosplit[1].equals("2")) {
                 actualizar();
                 actualizarArchivo("cereales.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Avenas") && codigo.equals("3")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Avenas") && codigosplit[1].equals("3")) {
                 actualizar();
                 actualizarArchivo("avenas.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas") && codigo.equals("4")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas") && codigosplit[1].equals("4")) {
                 actualizar();
                 actualizarArchivo("bebidas.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Otros") && codigo.equals("5")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Otros") && codigosplit[1].equals("5")) {
                 actualizar();
                 actualizarArchivo("otros.txt");
                 limpiar();
@@ -149,7 +151,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
                 txtCode.setText(null);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Nombre con mayúscula inicial y sin espacios");
+            JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios" + "\n,el precio o la cantidad");
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -275,6 +277,14 @@ public class AdminProductsEC extends javax.swing.JPanel {
     
     public static boolean validarNombre(String nombre) {
         return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
+    }
+    
+    public static boolean validarPrecio(String precio) {
+        return precio.matches("^[0-9]{3}[0-9]+$");
+    }
+    
+    public static boolean validarCabtidad(String cantidad) {
+        return cantidad.matches("^[0-9]+$");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;

@@ -186,18 +186,22 @@ public class Carrito extends javax.swing.JPanel {
     }//GEN-LAST:event_tblProductsMouseClicked
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        filaSeleccionada = tblProducts.getSelectedRow();
-        if (filaSeleccionada != -1) {
-            tblProducts.setValueAt(txtCode.getText(), filaSeleccionada, 0);
-            tblProducts.setValueAt(txtName.getText(), filaSeleccionada, 1);
-            tblProducts.setValueAt(txtPrice.getText(), filaSeleccionada, 2);
-            tblProducts.setValueAt(txtAmount.getText(), filaSeleccionada, 3);
-            limpiar();
-            filaSeleccionada = -1;
-        }else{
-            JOptionPane.showMessageDialog(null, "No has seleccionado ningun dato");
+        if (validarCabtidad(txtAmount.getText())) {
+            filaSeleccionada = tblProducts.getSelectedRow();
+            if (filaSeleccionada != -1) {
+                tblProducts.setValueAt(txtCode.getText(), filaSeleccionada, 0);
+                tblProducts.setValueAt(txtName.getText(), filaSeleccionada, 1);
+                tblProducts.setValueAt(txtPrice.getText(), filaSeleccionada, 2);
+                tblProducts.setValueAt(txtAmount.getText(), filaSeleccionada, 3);
+                limpiar();
+                filaSeleccionada = -1;
+            }else{
+                JOptionPane.showMessageDialog(null, "No has seleccionado ningun dato");
+            }
+            actualizarTabla();
+        } else {
+            JOptionPane.showMessageDialog(null, "Digite la cantidad en números","Advertencia",JOptionPane.WARNING_MESSAGE);
         }
-        actualizarTabla();
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -256,6 +260,10 @@ public class Carrito extends javax.swing.JPanel {
         txtName.setText(null);
         txtPrice.setText(null);
         txtAmount.setText(null);
+    }
+    
+    public static boolean validarCabtidad(String cantidad) {
+        return cantidad.matches("^[0-9]+$");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;

@@ -1,3 +1,0 @@
-5 Snack 2000 2 
-5 SnackFresa 7000 3 
-5 Snack2 9000 4 

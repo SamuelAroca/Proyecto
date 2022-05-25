@@ -1,3 +1,0 @@
-3 Avenas 8000 2
-3 Avenas2 4000 4
-3 Avenas3 5000 4

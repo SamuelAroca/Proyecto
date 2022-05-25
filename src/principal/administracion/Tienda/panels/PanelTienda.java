@@ -128,34 +128,38 @@ public class PanelTienda extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        File file = new File("carrito.txt");
-        String codigo;
-        String nombre;
-        String precio;
-        String cantidad;
-        
-        try {
-            FileWriter fw = new FileWriter(file,true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            codigo = txtCode.getText();
-            nombre = txtName.getText();
-            precio = txtPrice.getText();
-            cantidad = txtAmount.getText();
-            
-            if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
-                bw.write(codigo + " " + nombre + " " + precio + " " + cantidad);
-                bw.newLine();
-                
-                JOptionPane.showMessageDialog(null, "¡¡¡Producto agregado al carrito Satisfactoriamente!!!");
-                limpiar();
-            } else {
-                JOptionPane.showMessageDialog(null, "Porfavor ponga la cantidad a comprar","WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);
+        if (validarCabtidad(txtAmount.getText())) {
+            File file = new File("carrito.txt");
+            String codigo;
+            String nombre;
+            String precio;
+            String cantidad;
+
+            try {
+                FileWriter fw = new FileWriter(file,true);
+                BufferedWriter bw = new BufferedWriter(fw);
+
+                codigo = txtCode.getText();
+                nombre = txtName.getText();
+                precio = txtPrice.getText();
+                cantidad = txtAmount.getText();
+
+                if (!txtCode.getText().isEmpty() && !txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() && !txtAmount.getText().isEmpty()) {
+                    bw.write(codigo + " " + nombre + " " + precio + " " + cantidad);
+                    bw.newLine();
+
+                    JOptionPane.showMessageDialog(null, "¡¡¡Producto agregado al carrito Satisfactoriamente!!!");
+                    limpiar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Porfavor ponga la cantidad a comprar","WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);
+                }
+                bw.close();
+                fw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
             }
-            bw.close();
-            fw.close();
-        } catch (IOException ex) {
-            Logger.getLogger(AdminProductsEC.class.getName()).log(Level.SEVERE, null, ex);
+        } else {
+            JOptionPane.showMessageDialog(null, "Digite la cantidad en números","Advertencia",JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -216,6 +220,10 @@ public class PanelTienda extends javax.swing.JPanel {
         txtName.setText(null);
         txtPrice.setText(null);
         txtAmount.setText(null);
+    }
+    
+    public static boolean validarCabtidad(String cantidad) {
+        return cantidad.matches("^[0-9]+$");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

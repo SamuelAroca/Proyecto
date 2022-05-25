@@ -109,25 +109,27 @@ public class AdminProductsR extends javax.swing.JPanel {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
         String codigo = txtCode.getText();
+        String[] codigosplit;
+        codigosplit = codigo.split("-");
         
-        if (validarNombre(txtName.getText())) {
-            if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigo.equals("1")) {
+        if (validarNombre(txtName.getText()) && validarPrecio(txtPrice.getText()) && validarCabtidad(txtAmount.getText())) {
+            if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigosplit[1].equals("1")) {
                 escribirTabla();
                 escribirArchivo("granolas.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Cereales") && codigo.equals("2")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Cereales") && codigosplit[1].equals("2")) {
                 escribirTabla();
                 escribirArchivo("cereales.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Avenas") && codigo.equals("3")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Avenas") && codigosplit[1].equals("3")) {
                 escribirTabla();
                 escribirArchivo("avenas.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas") && codigo.equals("4")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Bebidas") && codigosplit[1].equals("4")) {
                 escribirTabla();
                 escribirArchivo("bebidas.txt");
                 limpiar();
-            } else if(Objects.equals(comboTipo.getSelectedItem(), "Otros") && codigo.equals("5")) {
+            } else if(Objects.equals(comboTipo.getSelectedItem(), "Otros") && codigosplit[1].equals("5")) {
                 escribirTabla();
                 escribirArchivo("otros.txt");
                 limpiar();
@@ -136,7 +138,7 @@ public class AdminProductsR extends javax.swing.JPanel {
                 txtCode.setText(null);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios");
+            JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios" + "\n,el precio o la cantidad");
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -229,6 +231,14 @@ public class AdminProductsR extends javax.swing.JPanel {
     
     public static boolean validarNombre(String nombre) {
         return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
+    }
+    
+    public static boolean validarPrecio(String precio) {
+        return precio.matches("^[0-9]{3}[0-9]+$");
+    }
+    
+    public static boolean validarCabtidad(String cantidad) {
+        return cantidad.matches("^[0-9]+$");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
