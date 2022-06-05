@@ -1,4 +1,4 @@
-package principal.administracion.Tienda.panels;
+package principal.administracion.Tienda.panelsShop;
 
 import java.io.*;
 import java.util.*;

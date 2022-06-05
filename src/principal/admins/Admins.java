@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import principal.administracion.AdminProductsEC;
 import principal.administracion.AdminProductsR;
-import principal.administracion.Tienda.AdminProveedores;
+import principal.administracion.AdminProveedores;
 import principal.logANDres.Login;
 
 public class Admins extends javax.swing.JFrame {
@@ -78,7 +78,7 @@ public class Admins extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, -1, -1));
 
-        btnAdminPE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ResP.png"))); // NOI18N
+        btnAdminPE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/ResPE.png"))); // NOI18N
         btnAdminPE.setBorderPainted(false);
         btnAdminPE.setContentAreaFilled(false);
         btnAdminPE.setFocusPainted(false);
@@ -87,7 +87,7 @@ public class Admins extends javax.swing.JFrame {
                 btnAdminPEActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAdminPE, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
+        getContentPane().add(btnAdminPE, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 150, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/vitarrico_logo 2.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, 180));

@@ -112,7 +112,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         String[] codigosplit;
         codigosplit = codigo.split("-");
         
-        if (validarNombre(txtName.getText()) && validarPrecio(txtPrice.getText()) && validarCabtidad(txtAmount.getText())) {
+        if (validarNombre(txtName.getText()) && validarPrecio(txtPrice.getText()) && validarCantidad(txtAmount.getText())) {
             if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigosplit[1].equals("1")) {
                 escribirTabla();
                 escribirArchivo("granolas.txt");
@@ -237,7 +237,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         return precio.matches("^[0-9]{3}[0-9]+$");
     }
     
-    public static boolean validarCabtidad(String cantidad) {
+    public static boolean validarCantidad(String cantidad) {
         return cantidad.matches("^[0-9]+$");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

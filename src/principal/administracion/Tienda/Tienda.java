@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import principal.administracion.Tienda.panels.Carrito;
-import principal.administracion.Tienda.panels.PanelTienda;
+import principal.administracion.Tienda.panelsShop.Carrito;
+import principal.administracion.Tienda.panelsShop.PanelTienda;
 import principal.logANDres.Login;
 
 public class Tienda extends javax.swing.JFrame {
@@ -131,13 +131,23 @@ public class Tienda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
-        dispose();
-        JFrame frameMain = new Login();
-        frameMain.setResizable(false);
-        frameMain.setSize(1073,767);
-        frameMain.setLocationRelativeTo(null);
-        frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameMain.setVisible(true);
+        BufferedWriter bw;
+        try {
+            String filePath = "carrito.txt";
+            bw = new BufferedWriter(new FileWriter(filePath));
+            bw.write("");
+            bw.close();
+            dispose();
+            JFrame frameMain = new Login();
+            frameMain.setResizable(false);
+            frameMain.setSize(1073,767);
+            frameMain.setLocationRelativeTo(null);
+            frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frameMain.setVisible(true);
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Tienda.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }//GEN-LAST:event_butonRegresarActionPerformed
 
     private void showPanel(JPanel p) {

@@ -1,0 +1,3 @@
+4 Bebida 8000 2 
+4 Bebida2 5000 3 
+4 Cocacola 6000 1 
