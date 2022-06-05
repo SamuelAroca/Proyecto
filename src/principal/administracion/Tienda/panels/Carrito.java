@@ -186,7 +186,7 @@ public class Carrito extends javax.swing.JPanel {
     }//GEN-LAST:event_tblProductsMouseClicked
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        if (validarCabtidad(txtAmount.getText())) {
+        if (validarCantidad(txtAmount.getText())) {
             filaSeleccionada = tblProducts.getSelectedRow();
             if (filaSeleccionada != -1) {
                 tblProducts.setValueAt(txtCode.getText(), filaSeleccionada, 0);
@@ -262,7 +262,7 @@ public class Carrito extends javax.swing.JPanel {
         txtAmount.setText(null);
     }
     
-    public static boolean validarCabtidad(String cantidad) {
+    public static boolean validarCantidad(String cantidad) {
         return cantidad.matches("^[0-9]+$");
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

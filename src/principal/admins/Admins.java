@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import principal.administracion.AdminProductsEC;
 import principal.administracion.AdminProductsR;
+import principal.administracion.Tienda.AdminProveedores;
 import principal.logANDres.Login;
 
 public class Admins extends javax.swing.JFrame {
@@ -21,6 +22,7 @@ public class Admins extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        btnAdminPE = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
@@ -38,7 +40,7 @@ public class Admins extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 700, -1, -1));
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ResP.png"))); // NOI18N
         jButton1.setToolTipText("");
@@ -52,7 +54,7 @@ public class Admins extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 150, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 150, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Modificar.png"))); // NOI18N
         jButton2.setBorderPainted(false);
@@ -63,7 +65,7 @@ public class Admins extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 150, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 150, -1));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/energia.png"))); // NOI18N
         jButton3.setBorder(null);
@@ -74,7 +76,18 @@ public class Admins extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, -1, -1));
+
+        btnAdminPE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ResP.png"))); // NOI18N
+        btnAdminPE.setBorderPainted(false);
+        btnAdminPE.setContentAreaFilled(false);
+        btnAdminPE.setFocusPainted(false);
+        btnAdminPE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdminPEActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAdminPE, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/vitarrico_logo 2.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, 180));
@@ -111,6 +124,11 @@ public class Admins extends javax.swing.JFrame {
         dispose();
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnAdminPEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminPEActionPerformed
+        JPanel p3 = new AdminProveedores();
+        changePanels(p3);
+    }//GEN-LAST:event_btnAdminPEActionPerformed
     
     private void changePanels(JPanel p) {
         p.setSize(1075,767);
@@ -122,6 +140,7 @@ public class Admins extends javax.swing.JFrame {
         content.repaint();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdminPE;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JPanel content;
     private javax.swing.JButton jButton1;

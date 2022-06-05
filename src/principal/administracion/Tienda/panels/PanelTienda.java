@@ -128,7 +128,7 @@ public class PanelTienda extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        if (validarCabtidad(txtAmount.getText())) {
+        if (validarCantidad(txtAmount.getText())) {
             File file = new File("carrito.txt");
             String codigo;
             String nombre;
@@ -222,7 +222,7 @@ public class PanelTienda extends javax.swing.JPanel {
         txtAmount.setText(null);
     }
     
-    public static boolean validarCabtidad(String cantidad) {
+    public static boolean validarCantidad(String cantidad) {
         return cantidad.matches("^[0-9]+$");
     }
 
