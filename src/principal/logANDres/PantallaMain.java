@@ -42,7 +42,7 @@ public class PantallaMain extends javax.swing.JFrame {
         labelTitulo = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
         labelVideo = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         botonLogin = new javax.swing.JButton();
         botonRegistro = new javax.swing.JButton();
         botonContactos = new javax.swing.JLabel();
@@ -79,16 +79,16 @@ public class PantallaMain extends javax.swing.JFrame {
         });
         jPanel1.add(labelVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/energia.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/energia.png"))); // NOI18N
+        salir.setBorder(null);
+        salir.setBorderPainted(false);
+        salir.setContentAreaFilled(false);
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                salirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, -1, -1));
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, -1, -1));
 
         botonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/Boton Inicio.png"))); // NOI18N
         botonLogin.setBorder(null);
@@ -178,15 +178,14 @@ public class PantallaMain extends javax.swing.JFrame {
     }//GEN-LAST:event_botonContactosMouseClicked
     
     //Cierra el programa
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         dispose();
         System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_salirActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel botonContactos;
     private javax.swing.JButton botonLogin;
     private javax.swing.JButton botonRegistro;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -194,5 +193,6 @@ public class PantallaMain extends javax.swing.JFrame {
     private javax.swing.JLabel labelLogo;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JLabel labelVideo;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }

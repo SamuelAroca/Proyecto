@@ -18,7 +18,7 @@ public class PassWordAdmin extends javax.swing.JFrame {
 
         botonAcceder = new javax.swing.JButton();
         pswAdmins = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
+        regresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -37,16 +37,16 @@ public class PassWordAdmin extends javax.swing.JFrame {
         getContentPane().add(botonAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
         getContentPane().add(pswAdmins, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 200, 30));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Regresar_1.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        regresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Regresar_1.png"))); // NOI18N
+        regresar.setBorder(null);
+        regresar.setBorderPainted(false);
+        regresar.setContentAreaFilled(false);
+        regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                regresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        getContentPane().add(regresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Frame 6 (1).png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -10, 520, 80));
@@ -72,7 +72,7 @@ public class PassWordAdmin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonAccederActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarActionPerformed
         dispose();
         JFrame frameRegistro = new Registro();
         frameRegistro.setResizable(false);
@@ -80,13 +80,13 @@ public class PassWordAdmin extends javax.swing.JFrame {
         frameRegistro.setLocationRelativeTo(null);
         frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameRegistro.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_regresarActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAcceder;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField pswAdmins;
+    private javax.swing.JButton regresar;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,9 +16,9 @@ public class Admins extends javax.swing.JFrame {
     private void initComponents() {
 
         btnRegresar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnRegis = new javax.swing.JButton();
+        btnModicar = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         btnAdminPE = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -39,41 +39,41 @@ public class Admins extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/ResP.png"))); // NOI18N
-        jButton1.setToolTipText("");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setFocusPainted(false);
-        jButton1.setFocusable(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/ResP.png"))); // NOI18N
+        btnRegis.setToolTipText("");
+        btnRegis.setBorder(null);
+        btnRegis.setBorderPainted(false);
+        btnRegis.setContentAreaFilled(false);
+        btnRegis.setFocusPainted(false);
+        btnRegis.setFocusable(false);
+        btnRegis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegisActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 150, -1));
+        getContentPane().add(btnRegis, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 150, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Modificar.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setFocusable(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnModicar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Modificar.png"))); // NOI18N
+        btnModicar.setBorderPainted(false);
+        btnModicar.setContentAreaFilled(false);
+        btnModicar.setFocusable(false);
+        btnModicar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnModicarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 150, -1));
+        getContentPane().add(btnModicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 150, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/energia.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/energia.png"))); // NOI18N
+        salir.setBorder(null);
+        salir.setBorderPainted(false);
+        salir.setContentAreaFilled(false);
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                salirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, -1, -1));
+        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, -1, -1));
 
         btnAdminPE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/ResPE.png"))); // NOI18N
         btnAdminPE.setBorderPainted(false);
@@ -98,16 +98,16 @@ public class Admins extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Llama al panel AdminProductsR
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisActionPerformed
         JPanel p1 = new AdminProductsR();
         changePanels(p1);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegisActionPerformed
 
     //Llama al panel AdminProductsEC
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnModicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModicarActionPerformed
         JPanel p2 = new AdminProductsEC();
         changePanels(p2);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnModicarActionPerformed
 
     //Nos regresa al Login
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -121,10 +121,10 @@ public class Admins extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
     
     //Nos cierra el programa
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         dispose();
         System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_salirActionPerformed
 
     //Llama al panel AdminProveedores
     private void btnAdminPEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminPEActionPerformed
@@ -144,12 +144,12 @@ public class Admins extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdminPE;
+    private javax.swing.JButton btnModicar;
+    private javax.swing.JButton btnRegis;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JPanel content;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }

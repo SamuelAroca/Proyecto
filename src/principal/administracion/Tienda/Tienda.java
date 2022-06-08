@@ -20,9 +20,9 @@ public class Tienda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        productos = new javax.swing.JButton();
+        carrito = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         butonRegresar = new javax.swing.JButton();
         labelLogo = new javax.swing.JLabel();
         rectangulo = new javax.swing.JLabel();
@@ -31,38 +31,38 @@ public class Tienda extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnProductos.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnProductos.png"))); // NOI18N
+        productos.setBorder(null);
+        productos.setBorderPainted(false);
+        productos.setContentAreaFilled(false);
+        productos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                productosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
+        getContentPane().add(productos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnCarrito.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnCarrito.png"))); // NOI18N
+        carrito.setBorder(null);
+        carrito.setBorderPainted(false);
+        carrito.setContentAreaFilled(false);
+        carrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                carritoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
+        getContentPane().add(carrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/energia.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/energia.png"))); // NOI18N
+        salir.setBorder(null);
+        salir.setBorderPainted(false);
+        salir.setContentAreaFilled(false);
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                salirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, 20));
+        getContentPane().add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, 20));
 
         butonRegresar.setBackground(new java.awt.Color(235, 197, 30));
         butonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/regresar.png"))); // NOI18N
@@ -105,21 +105,21 @@ public class Tienda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Llama al panel Tienda
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void productosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productosActionPerformed
         PanelTienda pt = new PanelTienda();
         showPanel(pt);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_productosActionPerformed
 
     //Llama al panel Carrito
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void carritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carritoActionPerformed
         Carrito p2 = new Carrito();
         showPanel(p2);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_carritoActionPerformed
 
     //Llama al metodo cerrar
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         cerrar();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_salirActionPerformed
 
     //Regresa al Login borrando el archivo carrito.txt
     private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
@@ -186,11 +186,11 @@ public class Tienda extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton butonRegresar;
+    private javax.swing.JButton carrito;
     private javax.swing.JPanel content;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     public javax.swing.JLabel labelLogo;
+    private javax.swing.JButton productos;
     private javax.swing.JLabel rectangulo;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }

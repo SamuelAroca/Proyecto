@@ -19,7 +19,7 @@ public class Registro extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        salir = new javax.swing.JButton();
         btnContac = new javax.swing.JButton();
         botonRegresar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -34,7 +34,7 @@ public class Registro extends javax.swing.JFrame {
         lblTitle1 = new javax.swing.JLabel();
         labelRegresar4 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        admins = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -48,16 +48,16 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/REGISTRO DE USUARIO.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/energia.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/energia.png"))); // NOI18N
+        salir.setBorder(null);
+        salir.setBorderPainted(false);
+        salir.setContentAreaFilled(false);
+        salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                salirActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         btnContac.setBackground(new java.awt.Color(235, 197, 30));
         btnContac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/txtContac.png"))); // NOI18N
@@ -139,16 +139,16 @@ public class Registro extends javax.swing.JFrame {
         txtPassword.setBackground(new java.awt.Color(229, 229, 229));
         jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 470, 50));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/BtnAdmins.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        admins.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/BtnAdmins.png"))); // NOI18N
+        admins.setBorder(null);
+        admins.setBorderPainted(false);
+        admins.setContentAreaFilled(false);
+        admins.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                adminsActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
+        jPanel2.add(admins, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 620, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 580, 770));
 
@@ -292,7 +292,7 @@ public class Registro extends javax.swing.JFrame {
         frameLog.setVisible(true);
     }//GEN-LAST:event_labelRegresar4MouseClicked
     //Pide la contraseña para poder registrar comno administrador
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void adminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminsActionPerformed
         dispose();
         JFrame frameAdmin = new PassWordAdmin();
         frameAdmin.setResizable(false);
@@ -300,19 +300,19 @@ public class Registro extends javax.swing.JFrame {
         frameAdmin.setLocationRelativeTo(null);
         frameAdmin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameAdmin.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_adminsActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    //Cierra el programa
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         dispose();
         System.exit(0);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_salirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton admins;
     private javax.swing.JButton botonRegresar;
     private javax.swing.JButton btnContac;
     private javax.swing.JButton btnRegis;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -324,6 +324,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel labelRegresar4;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblTitle1;
+    private javax.swing.JButton salir;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtName;
     private javax.swing.JPasswordField txtPassword;
