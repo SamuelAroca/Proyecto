@@ -1,22 +1,19 @@
 package principal.logANDres;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Seguridad {
     Login login = new Login();
     String res;
-   
+    
+    //Valida si los datos coinciden con la base de datos
     public boolean validarUsuario(String usuarios[],String userId,String nombre,String pwd,int intentos) {
         boolean encontrado = false;
         
         for(int i = 0; i < usuarios.length -1; i++) {
             if ((usuarios[i].equals(userId) && usuarios[i+1].equals(nombre) && usuarios[i+2].equals(pwd))) {
-                
-                encontrado = true;
-                
                 intentos = 0;
                 Login.setIntentos(intentos);
-                
                 return true;                                          
             }
         }
@@ -31,6 +28,7 @@ public class Seguridad {
         return false;
     }
     
+    //Valida si el usuario ya existe
     public boolean validarSiExiste(String ids[],String userId) {
         
         for (String validar : ids) {

@@ -15,6 +15,8 @@ public class PanelTienda extends javax.swing.JPanel {
     
     public PanelTienda() {
         initComponents();
+        
+        //Cargamos la tabla granolas y evitamos que el usuario pueda modificar datos ya definidos
         dtm = (DefaultTableModel) tblProducts.getModel();
         cargarDatos("granolas.txt");
         txtPrice.setEditable(false);
@@ -42,26 +44,26 @@ public class PanelTienda extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/TitleBarProductos.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/TitleBarProductos.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCo.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnCo.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnNo.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnNo.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnPr.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnPr.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 680, 50));
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
         jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 680, 50));
 
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Agregar.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/Agregar.png"))); // NOI18N
         btnAgregar.setToolTipText("");
         btnAgregar.setBorderPainted(false);
         btnAgregar.setContentAreaFilled(false);
@@ -127,6 +129,7 @@ public class PanelTienda extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    //Guarda los productos seleccionados en el carrito
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         if (validarCantidad(txtAmount.getText())) {
             File file = new File("carrito.txt");
@@ -163,6 +166,7 @@ public class PanelTienda extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    //Carga el producto seleccionado en los Label excepto la cantidad
     private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
         int seleccionar = tblProducts.rowAtPoint(evt.getPoint());
         txtCode.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 0)));
@@ -170,6 +174,7 @@ public class PanelTienda extends javax.swing.JPanel {
         txtPrice.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 2)));
     }//GEN-LAST:event_tblProductsMouseClicked
 
+    //Cambia el contenido de la tabla
     private void comboTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboTipoItemStateChanged
         dtm.getDataVector().removeAllElements();
         tblProducts.updateUI();
@@ -194,8 +199,10 @@ public class PanelTienda extends javax.swing.JPanel {
             dtm = (DefaultTableModel) tblProducts.getModel();
             cargarDatos("otros.txt");
         }
+        limpiar();
     }//GEN-LAST:event_comboTipoItemStateChanged
     
+    //Carga los datos de la tabla
     private void cargarDatos(String filePath){
         File file = new File(filePath);
         
@@ -215,6 +222,7 @@ public class PanelTienda extends javax.swing.JPanel {
         }
     }
     
+    //Limpia los Label
     private void limpiar(){
         txtCode.setText(null);
         txtName.setText(null);
@@ -222,6 +230,7 @@ public class PanelTienda extends javax.swing.JPanel {
         txtAmount.setText(null);
     }
     
+    //Valida que la catidad sea un número
     public static boolean validarCantidad(String cantidad) {
         return cantidad.matches("^[0-9]+$");
     }

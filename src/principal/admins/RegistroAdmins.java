@@ -44,14 +44,14 @@ public class RegistroAdmins extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BIENVENIDO.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/BIENVENIDO.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/REGISTRO DE ADMINS_1.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/REGISTRO DE ADMINS_1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
 
         btnContac.setBackground(new java.awt.Color(235, 197, 30));
-        btnContac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/txtContac.png"))); // NOI18N
+        btnContac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/txtContac.png"))); // NOI18N
         btnContac.setBorder(null);
         btnContac.setBorderPainted(false);
         btnContac.setContentAreaFilled(false);
@@ -62,7 +62,7 @@ public class RegistroAdmins extends javax.swing.JFrame {
         });
         jPanel1.add(btnContac, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 640, -1, -1));
 
-        botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar.png"))); // NOI18N
+        botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/regresar.png"))); // NOI18N
         botonRegresar.setBorder(null);
         botonRegresar.setBorderPainted(false);
         botonRegresar.setContentAreaFilled(false);
@@ -73,7 +73,7 @@ public class RegistroAdmins extends javax.swing.JFrame {
         });
         jPanel1.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 670, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 1.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Rectangle 1.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,7 +82,7 @@ public class RegistroAdmins extends javax.swing.JFrame {
         jLabel4.setText("Identificacion");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoV.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/LogoV.png"))); // NOI18N
         lblLogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblLogoMouseClicked(evt);
@@ -104,7 +104,7 @@ public class RegistroAdmins extends javax.swing.JFrame {
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
 
         btnRegis.setForeground(new java.awt.Color(84, 84, 84));
-        btnRegis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 3 (1).png"))); // NOI18N
+        btnRegis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Frame 3 (1).png"))); // NOI18N
         btnRegis.setBorder(null);
         btnRegis.setBorderPainted(false);
         btnRegis.setContentAreaFilled(false);

@@ -1,19 +1,12 @@
 package principal.administracion.Tienda;
 
-import java.awt.BorderLayout;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import principal.administracion.Tienda.panelsShop.Carrito;
-import principal.administracion.Tienda.panelsShop.PanelTienda;
-import principal.logANDres.Login;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.util.logging.*;
+import javax.swing.*;
+import principal.administracion.Tienda.panelsShop.*;
+import principal.logANDres.*;
 
 public class Tienda extends javax.swing.JFrame {
 
@@ -23,12 +16,10 @@ public class Tienda extends javax.swing.JFrame {
         showPanel(pt);
         cerrar();
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -37,13 +28,10 @@ public class Tienda extends javax.swing.JFrame {
         rectangulo = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/Rectangle 1.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-
         setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/BtnProductos.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnProductos.png"))); // NOI18N
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -54,7 +42,7 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, -1, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/BtnCarrito.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/BtnCarrito.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -65,7 +53,7 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/energia.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/energia.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -74,10 +62,10 @@ public class Tienda extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 730, -1, 20));
 
         butonRegresar.setBackground(new java.awt.Color(235, 197, 30));
-        butonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar.png"))); // NOI18N
+        butonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/regresar.png"))); // NOI18N
         butonRegresar.setToolTipText("");
         butonRegresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         butonRegresar.setBorderPainted(false);
@@ -90,11 +78,11 @@ public class Tienda extends javax.swing.JFrame {
         getContentPane().add(butonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 710, 130, 40));
 
         labelLogo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/vitarrico_logo 4.png"))); // NOI18N
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/vitarrico_logo 4.png"))); // NOI18N
         labelLogo.setText("Vitarrico");
         getContentPane().add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        rectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle.png"))); // NOI18N
+        rectangulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/tienda/Rectangle.png"))); // NOI18N
         getContentPane().add(rectangulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         content.setBackground(new java.awt.Color(255, 255, 255));
@@ -116,20 +104,24 @@ public class Tienda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Llama al panel Tienda
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         PanelTienda pt = new PanelTienda();
         showPanel(pt);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Llama al panel Carrito
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Carrito p2 = new Carrito();
         showPanel(p2);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //Llama al metodo cerrar
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         cerrar();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Regresa al Login borrando el archivo carrito.txt
     private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
         BufferedWriter bw;
         try {
@@ -150,6 +142,7 @@ public class Tienda extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_butonRegresarActionPerformed
 
+    //Cambia los paneles de la tienda
     private void showPanel(JPanel p) {
         p.setSize(1078,767);
         p.setLocation(0,0);
@@ -160,6 +153,7 @@ public class Tienda extends javax.swing.JFrame {
         content.repaint();
     }
     
+    //Metodo para borrar o no el carrito
     private void cerrar() {
         try {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -179,6 +173,7 @@ public class Tienda extends javax.swing.JFrame {
         }
     }
     
+    //Confirma la salida del usuario
     public void confirmarSalida() throws IOException {
         int valor = JOptionPane.showConfirmDialog(this, "¿Esta seguro de cerrar la aplicación?","Advertencia",JOptionPane.YES_NO_OPTION);
         
@@ -195,7 +190,6 @@ public class Tienda extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     public javax.swing.JLabel labelLogo;
     private javax.swing.JLabel rectangulo;
     // End of variables declaration//GEN-END:variables

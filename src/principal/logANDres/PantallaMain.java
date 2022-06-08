@@ -1,13 +1,11 @@
 package principal.logANDres;
 
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import principal.Contactos;
+import java.awt.*;
+import java.io.*;
+import java.net.*;
+import java.util.logging.*;
+import javax.swing.*;
+import principal.*;
 
 public class PantallaMain extends javax.swing.JFrame {
 
@@ -15,6 +13,7 @@ public class PantallaMain extends javax.swing.JFrame {
         initComponents();
     }
     
+    //Metodos para abrir los enlaces 
     public void enlace(String enlaceAAceder) throws IOException {
         Desktop enlace = Desktop.getDesktop();
         try {
@@ -39,6 +38,7 @@ public class PantallaMain extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         labelTitulo = new javax.swing.JLabel();
         labelLogo = new javax.swing.JLabel();
         labelVideo = new javax.swing.JLabel();
@@ -54,13 +54,16 @@ public class PantallaMain extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/GranolaImage.jpeg"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 389, 70, 100));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/marco.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, 390, 290));
 
-        labelTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Titulo Main.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/cereal-milk.gif"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 340, 240));
+
+        labelTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/Titulo Main.png"))); // NOI18N
         jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, -1));
 
-        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoV.png"))); // NOI18N
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/LogoV.png"))); // NOI18N
         labelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelLogoMouseClicked(evt);
@@ -68,7 +71,7 @@ public class PantallaMain extends javax.swing.JFrame {
         });
         jPanel1.add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
-        labelVideo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/play-video-icon-free-vector__1_-removebg-preview.png"))); // NOI18N
+        labelVideo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/BtnVideo.png"))); // NOI18N
         labelVideo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelVideoMouseClicked(evt);
@@ -76,7 +79,7 @@ public class PantallaMain extends javax.swing.JFrame {
         });
         jPanel1.add(labelVideo, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 560, -1, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/energia.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/energia.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -87,7 +90,7 @@ public class PantallaMain extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, -1, -1));
 
-        botonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Boton Inicio.png"))); // NOI18N
+        botonLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/Boton Inicio.png"))); // NOI18N
         botonLogin.setBorder(null);
         botonLogin.setBorderPainted(false);
         botonLogin.setContentAreaFilled(false);
@@ -99,7 +102,7 @@ public class PantallaMain extends javax.swing.JFrame {
         jPanel1.add(botonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, -1, -1));
         botonLogin.getAccessibleContext().setAccessibleName("botonLogin");
 
-        botonRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/boton registro.png"))); // NOI18N
+        botonRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/boton registro.png"))); // NOI18N
         botonRegistro.setBorder(null);
         botonRegistro.setBorderPainted(false);
         botonRegistro.setContentAreaFilled(false);
@@ -110,7 +113,7 @@ public class PantallaMain extends javax.swing.JFrame {
         });
         jPanel1.add(botonRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, -1, -1));
 
-        botonContactos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/txtContac.png"))); // NOI18N
+        botonContactos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/txtContac.png"))); // NOI18N
         botonContactos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonContactosMouseClicked(evt);
@@ -118,14 +121,15 @@ public class PantallaMain extends javax.swing.JFrame {
         });
         jPanel1.add(botonContactos, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 650, -1, -1));
 
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 2.png"))); // NOI18N
+        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/Rectangle 2.png"))); // NOI18N
         jPanel1.add(labelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    //Abre el Frame Login
     private void botonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLoginActionPerformed
         dispose();
         JFrame frameLog = new Login();
@@ -135,7 +139,8 @@ public class PantallaMain extends javax.swing.JFrame {
         frameLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLog.setVisible(true);
     }//GEN-LAST:event_botonLoginActionPerformed
-
+    
+    //Abre el Frame Registro
     private void botonRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroActionPerformed
         dispose();
         JFrame frameRegistro = new Registro();
@@ -145,7 +150,8 @@ public class PantallaMain extends javax.swing.JFrame {
         frameRegistro.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameRegistro.setVisible(true);
     }//GEN-LAST:event_botonRegistroActionPerformed
-
+    
+    //Redirecciona a la pagina oficial de Vitarrico
     private void labelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoMouseClicked
         try {
             PantallaMain main = new PantallaMain();
@@ -154,21 +160,24 @@ public class PantallaMain extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_labelLogoMouseClicked
-
+    
+    //Abre un video de Vitarrico
     private void labelVideoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelVideoMouseClicked
         enlacePubli("https://youtu.be/WWbjMbjcvt0");
     }//GEN-LAST:event_labelVideoMouseClicked
-
+    
+    //Abre el Frame Contactos
     private void botonContactosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContactosMouseClicked
         dispose();
         JFrame frameContacto = new Contactos();
         frameContacto.setResizable(false);
-        frameContacto.setSize(1073,767);
+        frameContacto.setSize(1035,767);
         frameContacto.setLocationRelativeTo(null);
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameContacto.setVisible(true);
     }//GEN-LAST:event_botonContactosMouseClicked
-
+    
+    //Cierra el programa
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
         System.exit(0);
@@ -179,6 +188,7 @@ public class PantallaMain extends javax.swing.JFrame {
     private javax.swing.JButton botonRegistro;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelFondo;
     private javax.swing.JLabel labelLogo;

@@ -42,19 +42,31 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/GranolaImage.jpeg"/>
+              <Image iconType="3" name="/principal/icons/logANDres/marco.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="60" y="389" width="70" height="100"/>
+              <AbsoluteConstraints x="160" y="410" width="390" height="290"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/principal/icons/logANDres/cereal-milk.gif"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="170" y="440" width="340" height="240"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="labelTitulo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Titulo Main.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/Titulo Main.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -66,7 +78,7 @@
         <Component class="javax.swing.JLabel" name="labelLogo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/LogoV.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/LogoV.png"/>
             </Property>
           </Properties>
           <Events>
@@ -81,7 +93,7 @@
         <Component class="javax.swing.JLabel" name="labelVideo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/play-video-icon-free-vector__1_-removebg-preview.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/BtnVideo.png"/>
             </Property>
           </Properties>
           <Events>
@@ -96,7 +108,7 @@
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/principal/administracion/Tienda/icons/energia.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/energia.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -116,7 +128,7 @@
         <Component class="javax.swing.JButton" name="botonLogin">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Boton Inicio.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/Boton Inicio.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -139,7 +151,7 @@
         <Component class="javax.swing.JButton" name="botonRegistro">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/boton registro.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/boton registro.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -159,7 +171,7 @@
         <Component class="javax.swing.JLabel" name="botonContactos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/txtContac.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/txtContac.png"/>
             </Property>
           </Properties>
           <Events>
@@ -174,7 +186,7 @@
         <Component class="javax.swing.JLabel" name="labelFondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Rectangle 2.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/Rectangle 2.png"/>
             </Property>
           </Properties>
           <Constraints>

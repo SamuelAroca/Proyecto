@@ -39,19 +39,19 @@ public class AdminProductsR extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TitleBarAgregar.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/TitleBarAgregar.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCo.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnCo.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnNo.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnNo.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnPr.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnPr.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
 
@@ -64,7 +64,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
         jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 680, 50));
 
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Agregar.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/Agregar.png"))); // NOI18N
         btnAgregar.setToolTipText("");
         btnAgregar.setBorderPainted(false);
         btnAgregar.setContentAreaFilled(false);
@@ -106,12 +106,14 @@ public class AdminProductsR extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
     }// </editor-fold>//GEN-END:initComponents
 
+    //Agrega los productos a la tabla y al archivo de texto
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
 
         String codigo = txtCode.getText();
         String[] codigosplit;
         codigosplit = codigo.split("-");
         
+        //Valida los formatos de los datos antes de agregar
         if (validarNombre(txtName.getText()) && validarPrecio(txtPrice.getText()) && validarCantidad(txtAmount.getText())) {
             if(Objects.equals(comboTipo.getSelectedItem(), "Granolas") && codigosplit[1].equals("1")) {
                 escribirTabla();
@@ -142,10 +144,12 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    //Cambia el tipo de producto en la tabla
     private void comboTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboTipoItemStateChanged
         dtm.getDataVector().removeAllElements();
         tblProducts.updateUI();
-
+        
+        //Opciones del comboBox
         if(Objects.equals(comboTipo.getSelectedItem(), "Granolas")) {
             dtm = (DefaultTableModel) tblProducts.getModel();
             cargarDatos("granolas.txt");
@@ -168,12 +172,14 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_comboTipoItemStateChanged
 
+    //Advierte al usuario que digito mal un dato
     private void txtNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNameFocusLost
         if (!validarNombre(txtName.getText())) {
             JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios");
         }
     }//GEN-LAST:event_txtNameFocusLost
     
+    //Escribe los datos en el txt
     public void escribirArchivo(String filePath){
 
         File file = new File(filePath);
@@ -194,6 +200,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
+    //Escribe los datos en la tabla
     private void escribirTabla() {
         o[0] = txtCode.getText();
         o[1] = txtName.getText();
@@ -203,6 +210,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         dtm.addRow(o);
     }
     
+    //Carga los datos de los archivos a la tabla
     private void cargarDatos(String filePath){
         File file = new File(filePath);
         
@@ -222,6 +230,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         }
     }
     
+    //Limpia los Label de datos
     private void limpiar(){
         txtCode.setText(null);
         txtName.setText(null);
@@ -229,6 +238,7 @@ public class AdminProductsR extends javax.swing.JPanel {
         txtAmount.setText(null);
     }
     
+    //Verifican que el usuario no digite mal un dato
     public static boolean validarNombre(String nombre) {
         return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
     }

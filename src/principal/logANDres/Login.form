@@ -34,7 +34,7 @@
           <Color blue="1e" green="c5" red="eb" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/txtContac.png"/>
+          <Image iconType="3" name="/principal/icons/logANDres/txtContac.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -54,7 +54,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/Ingreso Usuario.png"/>
+          <Image iconType="3" name="/principal/icons/logANDres/Ingreso Usuario.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -66,7 +66,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/BIENVENIDO.png"/>
+          <Image iconType="3" name="/principal/icons/logANDres/BIENVENIDO.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -81,7 +81,7 @@
           <Color blue="1e" green="c5" red="eb" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/regresar.png"/>
+          <Image iconType="3" name="/principal/icons/logANDres/regresar.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -104,7 +104,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/Rectangle 1.png"/>
+          <Image iconType="3" name="/principal/icons/logANDres/Rectangle 1.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -132,7 +132,7 @@
         <Component class="javax.swing.JLabel" name="lblLogo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/LogoV.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/LogoV.png"/>
             </Property>
           </Properties>
           <Events>
@@ -163,7 +163,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/sesion.png"/>
+              <Image iconType="3" name="/principal/icons/logANDres/sesion.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>

@@ -1,10 +1,9 @@
 package principal.administracion;
 
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import java.util.logging.*;
+import javax.swing.*;
+import javax.swing.table.*;
 
 public class AdminProveedores extends javax.swing.JPanel {
 
@@ -44,21 +43,21 @@ public class AdminProveedores extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TitleBarPE.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/TitleBarPE.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblCode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCo.png"))); // NOI18N
+        lblCode.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnCo.png"))); // NOI18N
         jPanel2.add(lblCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        lblProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/lblNProducto.png"))); // NOI18N
+        lblProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/lblNProducto.png"))); // NOI18N
         jPanel2.add(lblProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
-        lblPrice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnPr.png"))); // NOI18N
+        lblPrice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnPr.png"))); // NOI18N
         jPanel2.add(lblPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, -1));
 
-        lblAmount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
+        lblAmount.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnCa.png"))); // NOI18N
         jPanel2.add(lblAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
         jPanel2.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 680, 50));
         jPanel2.add(txtProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 680, 50));
@@ -97,7 +96,7 @@ public class AdminProveedores extends javax.swing.JPanel {
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 850, 250));
 
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Agregar.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/Agregar.png"))); // NOI18N
         btnAgregar.setBorderPainted(false);
         btnAgregar.setContentAreaFilled(false);
         btnAgregar.setFocusPainted(false);
@@ -108,7 +107,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         });
         jPanel2.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 60, -1, -1));
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/Eliminar.png"))); // NOI18N
         btnEliminar.setBorderPainted(false);
         btnEliminar.setContentAreaFilled(false);
         btnEliminar.setFocusPainted(false);
@@ -119,11 +118,11 @@ public class AdminProveedores extends javax.swing.JPanel {
         });
         jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 140, -1, -1));
 
-        lblName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnNo.png"))); // NOI18N
+        lblName.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnNo.png"))); // NOI18N
         jPanel2.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
         jPanel2.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 680, 50));
 
-        btnChange.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/BtnModificar.png"))); // NOI18N
+        btnChange.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnModificar.png"))); // NOI18N
         btnChange.setBorderPainted(false);
         btnChange.setContentAreaFilled(false);
         btnChange.setFocusPainted(false);
@@ -139,6 +138,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1073, 767));
     }// </editor-fold>//GEN-END:initComponents
 
+    //Carga datos seleccionados en los Label
     private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
         int seleccionar = tblProducts.rowAtPoint(evt.getPoint());
         txtCode.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 0)));
@@ -148,6 +148,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         txtAmount.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 4)));
     }//GEN-LAST:event_tblProductsMouseClicked
 
+    //Agrega los proveedores a la tabla y al archivo de texto
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         if (validarNombre(txtName.getText()) && validarNombre(txtProduct.getText()) && validarPrecio(txtPrice.getText()) && validarCantidad(txtAmount.getText())) {
             o[0] = txtCode.getText();
@@ -164,6 +165,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    //Elimina del Archivo y tabla
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int fila = tblProducts.getSelectedRow();
         if (fila >= 0){
@@ -175,6 +177,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         limpiar();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    //Actualiza los datos del proveedor
     private void btnChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeActionPerformed
         filaSeleccionada = tblProducts.getSelectedRow();
         if (filaSeleccionada != -1) {
@@ -191,6 +194,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         actualizarTabla();
     }//GEN-LAST:event_btnChangeActionPerformed
     
+    //Metodo para actualizar la tabla
     private void actualizarTabla(){
         String filePath = "proveedores.txt";
         File file = new File(filePath);
@@ -211,6 +215,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         }
     }
     
+    //Metodo para cargar los datos en la tabla
     private void cargarDatos(){
         String filePath = "proveedores.txt";
         File file = new File(filePath);
@@ -231,6 +236,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         }
     }
     
+    //Limpia los Label
     public void limpiar(){
         txtCode.setText(null);
         txtName.setText(null);
@@ -239,6 +245,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         txtAmount.setText(null);
     }
     
+    //Escribe en la base de datos
     private void escribiArchivo(){
         String filePath = "proveedores.txt";
         File file = new File(filePath);
@@ -259,6 +266,7 @@ public class AdminProveedores extends javax.swing.JPanel {
         }
     }
     
+    //Verifican que el usuario no digite mal un dato
     public static boolean validarNombre(String nombre) {
         return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
     }

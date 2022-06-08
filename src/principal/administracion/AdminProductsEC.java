@@ -13,6 +13,8 @@ public class AdminProductsEC extends javax.swing.JPanel {
 
     public AdminProductsEC() {
         initComponents();
+        
+        //Inicializa la tabla granolas
         dtm = (DefaultTableModel) tblProducts.getModel();
         cargarDatos("granolas.txt");               
     }
@@ -41,26 +43,26 @@ public class AdminProductsEC extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TitleBarModificar.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/TitleBarModificar.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCo.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnCo.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnNo.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnNo.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnPr.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnPr.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BtnCa.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/BtnCa.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
         jPanel1.add(txtCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 680, 50));
         jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 680, 50));
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 680, 50));
         jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 680, 50));
 
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/btnActualizar.png"))); // NOI18N
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/btnActualizar.png"))); // NOI18N
         btnActualizar.setToolTipText("");
         btnActualizar.setBorderPainted(false);
         btnActualizar.setContentAreaFilled(false);
@@ -72,7 +74,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
         });
         jPanel1.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 200, 130, 50));
 
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Eliminar.png"))); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/administracion/Eliminar.png"))); // NOI18N
         btnEliminar.setBorderPainted(false);
         btnEliminar.setContentAreaFilled(false);
         btnEliminar.setFocusPainted(false);
@@ -119,6 +121,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1075, 767));
     }// </editor-fold>//GEN-END:initComponents
 
+    //Actualiza la tabla
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         if (validarNombre(txtName.getText()) && validarPrecio(txtPrice.getText()) && validarCabtidad(txtAmount.getText())) {
             
@@ -155,6 +158,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
+    //Elimina productos de la tabla
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int fila= tblProducts.getSelectedRow();
         if (fila >= 0){
@@ -181,6 +185,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
         limpiar();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
+    //Carga los datos del producto seleccionado en los Label de los datos
     private void tblProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblProductsMouseClicked
         int seleccionar = tblProducts.rowAtPoint(evt.getPoint());
         txtCode.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 0)));
@@ -189,6 +194,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
         txtAmount.setText(String.valueOf(tblProducts.getValueAt(seleccionar, 3)));
     }//GEN-LAST:event_tblProductsMouseClicked
 
+    //Cambia la tabla dependiendo el tipo de producto que elijan
     private void comboTipoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboTipoItemStateChanged
         dtm.getDataVector().removeAllElements();
         tblProducts.updateUI();
@@ -213,8 +219,10 @@ public class AdminProductsEC extends javax.swing.JPanel {
             dtm = (DefaultTableModel) tblProducts.getModel();
             cargarDatos("otros.txt");
         }
+        limpiar();
     }//GEN-LAST:event_comboTipoItemStateChanged
     
+    //Actualiza el archivo de texto (Base de datos)
     private void actualizarArchivo(String filePath){
         File file = new File(filePath);
         try {
@@ -234,8 +242,9 @@ public class AdminProductsEC extends javax.swing.JPanel {
         }
     }
     
+    //Carga los datos en la tabla
     private void cargarDatos(String filePath){
-                File file = new File(filePath);
+        File file = new File(filePath);
         
         try {
             FileReader fr = new FileReader(file);
@@ -254,6 +263,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
         }
     }
     
+    //Actualiza la tabla
     private void actualizar() {
         filaSeleccionada = tblProducts.getSelectedRow();
         if (filaSeleccionada != -1) {
@@ -268,13 +278,14 @@ public class AdminProductsEC extends javax.swing.JPanel {
         }
     }
     
+    //Limpia los Label de datos
     public void limpiar(){
         txtCode.setText(null);
         txtName.setText(null);
         txtPrice.setText(null);
         txtAmount.setText(null);
     }
-    
+    //Verifican que el usuario no digite mal un dato
     public static boolean validarNombre(String nombre) {
         return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
     }

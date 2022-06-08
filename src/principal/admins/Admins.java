@@ -1,12 +1,9 @@
 package principal.admins;
 
-import java.awt.BorderLayout;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import principal.administracion.AdminProductsEC;
-import principal.administracion.AdminProductsR;
-import principal.administracion.AdminProveedores;
-import principal.logANDres.Login;
+import java.awt.*;
+import javax.swing.*;
+import principal.administracion.*;
+import principal.logANDres.*;
 
 public class Admins extends javax.swing.JFrame {
 
@@ -30,7 +27,7 @@ public class Admins extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/RegresarVerde.png"))); // NOI18N
+        btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/RegresarVerde.png"))); // NOI18N
         btnRegresar.setBorderPainted(false);
         btnRegresar.setContentAreaFilled(false);
         btnRegresar.setFocusPainted(false);
@@ -42,7 +39,7 @@ public class Admins extends javax.swing.JFrame {
         });
         getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ResP.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/ResP.png"))); // NOI18N
         jButton1.setToolTipText("");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
@@ -56,7 +53,7 @@ public class Admins extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 150, -1));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Modificar.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Modificar.png"))); // NOI18N
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setFocusable(false);
@@ -67,7 +64,7 @@ public class Admins extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 150, -1));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/energia.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/energia.png"))); // NOI18N
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
@@ -78,7 +75,7 @@ public class Admins extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, -1, -1));
 
-        btnAdminPE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/administracion/Tienda/icons/ResPE.png"))); // NOI18N
+        btnAdminPE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/ResPE.png"))); // NOI18N
         btnAdminPE.setBorderPainted(false);
         btnAdminPE.setContentAreaFilled(false);
         btnAdminPE.setFocusPainted(false);
@@ -89,10 +86,10 @@ public class Admins extends javax.swing.JFrame {
         });
         getContentPane().add(btnAdminPE, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 150, 70));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/vitarrico_logo 2.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/vitarrico_logo 2.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 200, 180));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Rectangle.png"))); // NOI18N
         jLabel1.setToolTipText("");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, -1));
         getContentPane().add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, -10, 1070, 770));
@@ -100,16 +97,19 @@ public class Admins extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Llama al panel AdminProductsR
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JPanel p1 = new AdminProductsR();
         changePanels(p1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    //Llama al panel AdminProductsEC
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JPanel p2 = new AdminProductsEC();
         changePanels(p2);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //Nos regresa al Login
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         dispose();
         JFrame frameLogin = new Login();
@@ -119,17 +119,20 @@ public class Admins extends javax.swing.JFrame {
         frameLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLogin.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
-
+    
+    //Nos cierra el programa
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
         System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    //Llama al panel AdminProveedores
     private void btnAdminPEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminPEActionPerformed
         JPanel p3 = new AdminProveedores();
         changePanels(p3);
     }//GEN-LAST:event_btnAdminPEActionPerformed
     
+    //Metodo para cambiar los paneles del Frame
     private void changePanels(JPanel p) {
         p.setSize(1075,767);
         p.setLocation(0,0);

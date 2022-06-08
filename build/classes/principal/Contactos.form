@@ -39,7 +39,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Fijo 1.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Fijo 1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -51,7 +51,7 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Comunicate desde cualquier lugar del pa&#xed;s_.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Comunicate desde cualquier lugar del pa&#xed;s_.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -63,7 +63,7 @@
         <Component class="javax.swing.JLabel" name="face2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/facebook 1.png"/>
+              <Image iconType="3" name="/principal/icons/principal/facebook 1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -75,7 +75,7 @@
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Dirigete a nuestras instalaciones.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Dirigete a nuestras instalaciones.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -87,7 +87,7 @@
         <Component class="javax.swing.JLabel" name="direccion2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Direcci&#xf3;n 1.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Direcci&#xf3;n 1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -99,7 +99,7 @@
         <Component class="javax.swing.JLabel" name="direccion1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Calle 34 # 85 C &#x2013; 1, Medell&#xed;n, Antioquia.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Calle 34 # 85 C &#x2013; 1, Medell&#xed;n, Antioquia.png"/>
             </Property>
           </Properties>
           <Events>
@@ -111,14 +111,14 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="face1">
+        <Component class="javax.swing.JLabel" name="face">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/@vitarricooficial.png"/>
+              <Image iconType="3" name="/principal/icons/principal/@vitarricooficial.png"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="face1MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="faceMouseClicked"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -126,14 +126,14 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="insta1">
+        <Component class="javax.swing.JLabel" name="insta">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/@vitarricooficial.png"/>
+              <Image iconType="3" name="/principal/icons/principal/@vitarricooficial.png"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="insta1MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="instaMouseClicked"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -144,7 +144,7 @@
         <Component class="javax.swing.JLabel" name="insta2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Insta 1.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Insta 1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -156,7 +156,7 @@
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Busca nuestras Redes Sociales.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Busca nuestras Redes Sociales.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -168,7 +168,7 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/correo 1.png"/>
+              <Image iconType="3" name="/principal/icons/principal/correo 1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -180,7 +180,7 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/servicio.al.cliente@vitarrico.com.co.png"/>
+              <Image iconType="3" name="/principal/icons/principal/servicio.al.cliente@vitarrico.com.co.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -192,7 +192,7 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Escr&#xed;benos al correo electr&#xf3;nico_.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Escr&#xed;benos al correo electr&#xf3;nico_.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -204,7 +204,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/(604) 250 5106.png"/>
+              <Image iconType="3" name="/principal/icons/principal/(604) 250 5106.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -216,7 +216,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Wpp 1.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Wpp 1.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -228,7 +228,7 @@
         <Component class="javax.swing.JLabel" name="whatsa">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/WhatsApp 315 366 58 14.png"/>
+              <Image iconType="3" name="/principal/icons/principal/WhatsApp 315 366 58 14.png"/>
             </Property>
           </Properties>
           <Events>
@@ -243,7 +243,7 @@
         <Component class="javax.swing.JLabel" name="labelTitulo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/CONTACTOS.png"/>
+              <Image iconType="3" name="/principal/icons/principal/CONTACTOS.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -255,7 +255,7 @@
         <Component class="javax.swing.JLabel" name="labelLogo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/vitarrico_logo 2.png"/>
+              <Image iconType="3" name="/principal/icons/principal/vitarrico_logo 2.png"/>
             </Property>
           </Properties>
           <Events>
@@ -270,7 +270,7 @@
         <Component class="javax.swing.JButton" name="botonRegresar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/regresar.png"/>
+              <Image iconType="3" name="/principal/icons/principal/regresar.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -290,7 +290,7 @@
         <Component class="javax.swing.JLabel" name="labelFondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/Rectangle 2.png"/>
+              <Image iconType="3" name="/principal/icons/principal/Rectangle 2.png"/>
             </Property>
           </Properties>
           <Constraints>

@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/principal/administracion/Tienda/icons/Rectangle 1.png"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -40,7 +30,7 @@
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/principal/administracion/Tienda/icons/BtnProductos.png"/>
+          <Image iconType="3" name="/principal/icons/tienda/BtnProductos.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -60,7 +50,7 @@
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/principal/administracion/Tienda/icons/BtnCarrito.png"/>
+          <Image iconType="3" name="/principal/icons/tienda/BtnCarrito.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -80,7 +70,7 @@
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/principal/administracion/Tienda/icons/energia.png"/>
+          <Image iconType="3" name="/principal/icons/tienda/energia.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -93,7 +83,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="220" y="730" width="-1" height="-1"/>
+          <AbsoluteConstraints x="220" y="730" width="-1" height="20"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -103,7 +93,7 @@
           <Color blue="1e" green="c5" red="eb" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/regresar.png"/>
+          <Image iconType="3" name="/principal/icons/tienda/regresar.png"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -129,7 +119,7 @@
           <Font name="Segoe UI" size="24" style="3"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/principal/administracion/Tienda/icons/vitarrico_logo 4.png"/>
+          <Image iconType="3" name="/principal/icons/tienda/vitarrico_logo 4.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Vitarrico"/>
       </Properties>
@@ -145,7 +135,7 @@
     <Component class="javax.swing.JLabel" name="rectangulo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Images/Rectangle.png"/>
+          <Image iconType="3" name="/principal/icons/tienda/Rectangle.png"/>
         </Property>
       </Properties>
       <Constraints>

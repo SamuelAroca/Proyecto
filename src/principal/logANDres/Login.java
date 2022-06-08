@@ -1,13 +1,12 @@
 package principal.logANDres;
 
-import principal.admins.Admins;
+import principal.admins.*;
 import java.io.*;
 import java.util.*;
-import java.util.Scanner;
 import java.util.logging.*;
 import javax.swing.*;
-import principal.Contactos;
-import principal.administracion.Tienda.Tienda;
+import principal.*;
+import principal.administracion.Tienda.*;
 
 public class Login extends javax.swing.JFrame {
     
@@ -20,6 +19,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         rootPane.setDefaultButton(btnLogin);
     }
+    //Cuenta de los intentos
     public static void setIntentos(int intentos) {
         Login.intentos = intentos;
     }
@@ -49,7 +49,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnContac.setBackground(new java.awt.Color(235, 197, 30));
-        btnContac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/txtContac.png"))); // NOI18N
+        btnContac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/txtContac.png"))); // NOI18N
         btnContac.setBorder(null);
         btnContac.setBorderPainted(false);
         btnContac.setContentAreaFilled(false);
@@ -60,14 +60,14 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnContac, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 640, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Ingreso Usuario.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/Ingreso Usuario.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/BIENVENIDO.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/BIENVENIDO.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, -1, -1));
 
         butonRegresar.setBackground(new java.awt.Color(235, 197, 30));
-        butonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/regresar.png"))); // NOI18N
+        butonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/regresar.png"))); // NOI18N
         butonRegresar.setToolTipText("");
         butonRegresar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         butonRegresar.setBorderPainted(false);
@@ -79,13 +79,13 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(butonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 130, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 1.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/Rectangle 1.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 770));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoV.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/LogoV.png"))); // NOI18N
         lblLogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblLogoMouseClicked(evt);
@@ -98,7 +98,7 @@ public class Login extends javax.swing.JFrame {
         jPanel2.add(txtNombreLog, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 470, 50));
 
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/sesion.png"))); // NOI18N
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/logANDres/sesion.png"))); // NOI18N
         btnLogin.setBorder(null);
         btnLogin.setBorderPainted(false);
         btnLogin.setContentAreaFilled(false);
@@ -138,7 +138,8 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    //Inicion de Sesión
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         FileReader fr;
         FileReader fr2;
@@ -174,6 +175,7 @@ public class Login extends javax.swing.JFrame {
             while(sc.hasNextLine()) {
                 usuarios[i++] = sc.nextLine();//Almacenado cada linea en una posicion
             }
+            
             //Login Admins
             while((linea2 = br2.readLine()) != null) {
                 nLineas2++;
@@ -197,6 +199,7 @@ public class Login extends javax.swing.JFrame {
             
             Seguridad s = new Seguridad();
             
+            //Diferencia entre un usuario y un administrador
             if(Objects.equals(comboTipoUser.getSelectedItem(), "Usuario")) {
                 if (s.validarUsuario(usuarios, userId, user, pwd, intentos)) {
                     dispose();
@@ -226,7 +229,7 @@ public class Login extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnLoginActionPerformed
-
+    //Dirige al Frame Contactos
     private void btnContacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContacActionPerformed
         dispose();
         JFrame frameContacto = new Contactos();
@@ -236,7 +239,7 @@ public class Login extends javax.swing.JFrame {
         frameContacto.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameContacto.setVisible(true);
     }//GEN-LAST:event_btnContacActionPerformed
-
+    //Redirecciona a la pagina oficial de Vitarrico
     private void lblLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoMouseClicked
         try {
             PantallaMain main = new PantallaMain();
@@ -245,7 +248,7 @@ public class Login extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_lblLogoMouseClicked
-
+    //Regresa a PantallaMain
     private void butonRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butonRegresarActionPerformed
         dispose();
         JFrame frameMain = new PantallaMain();

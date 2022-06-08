@@ -25,7 +25,7 @@ public class PassWordAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botonAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Acceder.png"))); // NOI18N
+        botonAcceder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Acceder.png"))); // NOI18N
         botonAcceder.setBorder(null);
         botonAcceder.setBorderPainted(false);
         botonAcceder.setContentAreaFilled(false);
@@ -37,7 +37,7 @@ public class PassWordAdmin extends javax.swing.JFrame {
         getContentPane().add(botonAcceder, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
         getContentPane().add(pswAdmins, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 200, 30));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Regresar_1.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Regresar_1.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -48,10 +48,10 @@ public class PassWordAdmin extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Frame 6 (1).png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Frame 6 (1).png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -10, 520, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Rectangle 2.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/principal/icons/admins/Rectangle 2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
