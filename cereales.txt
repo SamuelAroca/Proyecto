@@ -1,3 +1,0 @@
-2 Cereales 5000 1 
-2 Cereales2 6000 1 
-2 Cereales3 7000 1 

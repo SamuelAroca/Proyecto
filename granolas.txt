@@ -1,3 +1,4 @@
-1234-1 Granola 12000 1 
 12123-1 Granola2 12000 1 
 46464-1 Granolafresa 12000 1 
+34343-1 Granolacoco 13000 7 
+123344-1 GranolaCoco 18000 4 

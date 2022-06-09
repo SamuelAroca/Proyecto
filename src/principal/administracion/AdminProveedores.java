@@ -268,7 +268,7 @@ public class AdminProveedores extends javax.swing.JPanel {
     
     //Verifican que el usuario no digite mal un dato
     public static boolean validarNombre(String nombre) {
-        return nombre.matches("^([A-Z]{1}[a-z0-9]+)$");
+        return nombre.matches("^([A-Z]{1}[a-z0-9A-ZñÑ]+)$");
     }
     
     public static boolean validarPrecio(String precio) {
