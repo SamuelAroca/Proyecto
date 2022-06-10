@@ -162,7 +162,7 @@ public class Carrito extends javax.swing.JPanel {
                 resultado = total * total2;
                 sumador += resultado;
             }
-            JOptionPane.showMessageDialog(null, "¡¡¡Gracias por su compra!!!" + "\n" + "Su total es: " + sumador);
+            JOptionPane.showMessageDialog(null, "¡¡¡Gracias por su compra!!!" + "\n" + "  Su total es: " + sumador + " Pesos");
             
             BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
             bw.write("");

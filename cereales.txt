@@ -1,0 +1,6 @@
+1-2 SucaRicosHojueladeMaízAzucaradas 18000 3 
+2-2 RikyRicosHojueladeMaízNatural 12000 7 
+3-2 AnillosFrutados 14000 9 
+4-2 ChocoFlupisCerealdeArrozAchocolatado 15000 5 
+5-2 AritosKokomiel 4000 20 
+6-2 HojueladeMaízNaturalExtruida 13000 4 

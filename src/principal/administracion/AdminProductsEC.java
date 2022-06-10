@@ -154,7 +154,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
                 txtCode.setText(null);
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios" + "\n,el precio o la cantidad");
+            JOptionPane.showMessageDialog(null, "Mayúscula inicial y sin espacios," + "\nel precio o la cantidad");
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -287,7 +287,7 @@ public class AdminProductsEC extends javax.swing.JPanel {
     }
     //Verifican que el usuario no digite mal un dato
     public static boolean validarNombre(String nombre) {
-        return nombre.matches("^([A-Z]{1}[a-z0-9A-ZñÑ]+)$");
+        return nombre.matches("^([A-ZÁ-Ú]{1}[a-z0-9A-ZñÑá-ú]+)$");
     }
     
     public static boolean validarPrecio(String precio) {
